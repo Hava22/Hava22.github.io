@@ -1,11 +1,95 @@
-hava22.github.io/
-├── index.html
-├── about.html
-├── posts/
-│   ├── content-strategy.html
-│   ├── seo-guide.html
-│   └── ai-writing-tools.html
-└── assets/
-    └── css/
-        └── style.css
+/* Modern responsive WP-like theme */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 1.5em auto;
+}
+
+.site-header {
+  background: #fff;
+  padding: 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-title {
+  font-size: 1.8em;
+  margin-bottom: 0.2em;
+}
+
+.site-nav a {
+  margin-right: 1em;
+  text-decoration: none;
+  color: #555;
+}
+.site-nav a.active,
+.site-nav a:hover {
+  color: #000;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+
+@media(min-width: 600px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.post {
+  background: #fff;
+  padding: 1.2em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.post-excerpt {
+  color: #666;
+  margin-top: 0.5em;
+}
+
+.post-content h1 {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1em;
+  color: #0073e6;
+}
+
+.site-footer {
+  text-align: center;
+  margin: 2em 0;
+  color: #777;
+  font-size: 0.9em;
+}
+
+.author-photo {
+  width: 120px;
+  border-radius: 50%;
+  margin-right: 1em;
+  float: left;
+}
+
+.about-content {
+  overflow: auto;
+}
 
