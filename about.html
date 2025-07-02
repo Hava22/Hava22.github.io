@@ -4,133 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Hava</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    /* Reset & base */
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      color: #222;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #fff;
-      color: #333;
-      line-height: 1.6;
+      padding: 0 20px;
     }
-
-    a {
-      color: #21759b;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Container */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Header */
-    .site-header {
-      background-color: #21759b;
-      padding: 15px 0;
-      color: white;
-    }
-    .site-header .site-title {
-      margin: 0;
-      font-weight: 700;
-      font-size: 2rem;
+    h1 {
       text-align: center;
-    }
-    .site-nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 10px;
-    }
-    .site-nav a {
-      color: white;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-    .site-nav a.active,
-    .site-nav a:hover {
-      background-color: #145a78;
-    }
-
-    /* Main content */
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 30px;
+      color: #0a3d62;
       margin-top: 40px;
     }
-    .author-photo {
-      flex: 1 1 280px;
-      max-width: 320px;
+    .container {
+      max-width: 900px;
+      margin: 40px auto 60px;
+      background: white;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-      width: 100%;
-      height: auto;
-    }
-    .about-text {
-      flex: 2 1 480px;
-      font-size: 1.125rem;
-      color: #444;
-    }
-    .about-text strong {
-      color: #21759b;
-    }
-
-    /* Footer */
-    .site-footer {
-      background-color: #21759b;
-      color: white;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: fadeIn 1s forwards;
       text-align: center;
-      padding: 20px 0;
-      margin-top: 60px;
-      font-size: 0.9rem;
     }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      .about-content {
-        flex-direction: column;
-        text-align: center;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
       }
-      .about-text {
-        flex: none;
-      }
+    }
+    .author-photo {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(10, 61, 98, 0.3);
+      margin: 20px auto;
+      display: block;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      margin: 20px 0;
+    }
+    nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 12px;
+      color: #0a3d62;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #063353;
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">About Me</h1>
-      <nav class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="tutoring.html">Tutoring</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container">
+    <h1>About Hava</h1>
 
-  <main class="container about-content">
-    <img src="assets/images/contact_pic.jpg" alt="Reach out" class="author-photo" />
-    <div class="about-text">
-      <p>Hello! I’m <strong>Hava</strong> — a passionate content writer and private tutor focused on delivering engaging content and supporting learners.</p>
-      <p>Whether it's through blog posts, academic writing, or personalized tutoring, I love helping others grow their skills and confidence.</p>
-    </div>
-  </main>
+    <img
+      src="assets/images/contact_pic.jpg"
+      alt="Reach out"
+      class="author-photo"
+    />
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Hava</p>
-  </footer>
+    <p>
+      Hi! I’m <strong>Hava</strong>, a passionate content writer and private tutor dedicated to creating engaging content and supporting learners.
+    </p>
+    <p>
+      Whether it’s blog posts, academic writing, or personalized tutoring, I enjoy helping others develop their skills and confidence.
+    </p>
+
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="tutoring.html">Tutoring</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </body>
 </html>
-
