@@ -58,7 +58,7 @@
         .btn-contact {
             display: block;
             width: 220px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 15px auto;
             padding: 15px 0;
             text-align: center;
             background: #0a3d62;
@@ -73,6 +73,27 @@
         }
         .btn-contact:hover {
             background: #063353;
+            transform: scale(1.05);
+        }
+        /* MerrJep button style */
+        .btn-merrjep {
+            display: block;
+            width: 220px;
+            margin: 0 auto 30px auto;
+            padding: 15px 0;
+            text-align: center;
+            background: #ff5a00;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(255, 90, 0, 0.6);
+            transition: background 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            animation: fadeIn 3.5s ease forwards;
+        }
+        .btn-merrjep:hover {
+            background: #cc4700;
             transform: scale(1.05);
         }
         nav {
@@ -94,11 +115,17 @@
 <body>
     <div class="container">
         <h1>Mësimdhënie - Hava</h1>
+
         <img
-            src="https://img.mercdn.net/user_files/4e/4e5db1a8d5eaa062e798ce0e9214bb8e7e3fdb4f.jpg"
+            src="assets/images/hometutoring.png"
             alt="Mësues Personal Online"
             class="tutor-image"
         />
+
+        <a href="https://www.merrjep.com/shpallja/biznes-pune/sherbime/ore-mesimdhenie/ne-shitje/prishtine/personal-tutor-online-ne-vend/15514902" rel="noopener" class="btn-merrjep">
+            Shiko në MerrJep
+        </a>
+
         <p>
             Jam Hava, një tutore me përvojë që ofroj ndihmë individuale për studentë të shkollave të mesme dhe universitare, në lëndë të ndryshme akademike dhe programim. Mund të zhvilloj mësime në Prishtinë ose online përmes platformave si Zoom apo Google Meet.
         </p>
@@ -139,3 +166,4 @@
     </div>
 </body>
 </html>
+
