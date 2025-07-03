@@ -45,44 +45,30 @@
       line-height: 1.5em;
       margin: 20px 0;
     }
+
+    /* Navigation styles */
     nav {
-      margin-top: 20px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 12px;
-      color: #0a3d62;
-      text-decoration: none;
+      background: #0a3d62;
       font-weight: 600;
-      transition: color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      border-radius: 8px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0;
     }
-    nav a:hover {
-      color: #063353;
+    nav ul.nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 10px 20px;
+      margin: 0;
+      justify-content: center;
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>About Hava</h1>
+    nav ul.nav-list li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      transition: background-color 0.3s eas
 
-    <img
-      src="assets/images/contact_pic.jpg"
-      alt="Reach out"
-      class="author-photo"
-    />
-
-    <p>
-      Hi! I’m <strong>Hava</strong>, a passionate content writer and private tutor dedicated to creating engaging content and supporting learners.
-    </p>
-    <p>
-      Whether it’s blog posts, academic writing, or personalized tutoring, I enjoy helping others develop their skills and confidence.
-    </p>
-
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="tutoring.html">Tutoring</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</body>
-</html>

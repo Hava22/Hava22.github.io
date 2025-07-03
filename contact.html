@@ -69,19 +69,76 @@
       background-color: #063353;
       transform: scale(1.05);
     }
+
+    /* Navigation styles */
     nav {
-      margin-top: 20px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 12px;
-      color: #0a3d62;
-      text-decoration: none;
+      background: #0a3d62;
       font-weight: 600;
-      transition: color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 30px auto 0;
+      padding: 0;
     }
-    nav a:hover {
-      color: #063353;
+    nav ul.nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 10px 20px;
+      margin: 0;
+      justify-content: center;
+    }
+    nav ul.nav-list li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+      border-radius: 4px;
+    }
+    nav ul.nav-list li a:hover,
+    nav ul.nav-list li a.active {
+      background-color: #063353;
+    }
+
+    /* Hamburger menu styles */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 1001;
+    }
+    .nav-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Responsive nav for small screens */
+    @media (max-width: 768px) {
+      nav ul.nav-list {
+        display: none;
+        flex-direction: column;
+        background: #0a3d62;
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        border-radius: 0 0 8px 8px;
+        z-index: 1000;
+      }
+      nav ul.nav-list.show {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -101,13 +158,38 @@
 
       <button type="submit">Send</button>
     </form>
-
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="tutoring.html">Tutoring</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
   </div>
+
+  <nav>
+    <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tutoring.html">Tutoring</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.querySelector('.nav-list');
+      if (toggle && navList) {
+        toggle.addEventListener('click', () => {
+          navList.classList.toggle('show');
+        });
+        toggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navList.classList.toggle('show');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 

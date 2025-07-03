@@ -1,169 +1,248 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mësimdhënie - Hava</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f7f7;
-            color: #222;
-            margin: 0;
-            padding: 0 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #0a3d62;
-            margin-top: 40px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto 60px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        .tutor-image {
-            display: block;
-            max-width: 300px;
-            margin: 0 auto 30px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(10, 61, 98, 0.3);
-            animation: fadeIn 2s ease forwards;
-        }
-        p {
-            font-size: 1.1em;
-            line-height: 1.5em;
-            margin-bottom: 25px;
-            white-space: pre-line;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 25px;
-        }
-        ul li {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        .btn-contact {
-            display: block;
-            width: 220px;
-            margin: 0 auto 15px auto;
-            padding: 15px 0;
-            text-align: center;
-            background: #0a3d62;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(10, 61, 98, 0.4);
-            transition: background 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-            animation: fadeIn 3s ease forwards;
-        }
-        .btn-contact:hover {
-            background: #063353;
-            transform: scale(1.05);
-        }
-        /* MerrJep button style */
-        .btn-merrjep {
-            display: block;
-            width: 220px;
-            margin: 0 auto 30px auto;
-            padding: 15px 0;
-            text-align: center;
-            background: #ff5a00;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(255, 90, 0, 0.6);
-            transition: background 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-            animation: fadeIn 3.5s ease forwards;
-        }
-        .btn-merrjep:hover {
-            background: #cc4700;
-            transform: scale(1.05);
-        }
-        nav {
-            margin-top: 20px;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 12px;
-            color: #0a3d62;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #063353;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mësimdhënie - Hava</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 0 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #0a3d62;
+      margin-top: 40px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto 60px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .tutor-image {
+      display: block;
+      max-width: 300px;
+      margin: 0 auto 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(10, 61, 98, 0.3);
+      animation: fadeIn 2s ease forwards;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.5em;
+      margin-bottom: 25px;
+      white-space: pre-line;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 25px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+    .btn-contact {
+      display: block;
+      width: 220px;
+      margin: 0 auto 15px auto;
+      padding: 15px 0;
+      text-align: center;
+      background: #0a3d62;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(10, 61, 98, 0.4);
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      animation: fadeIn 3s ease forwards;
+    }
+    .btn-contact:hover {
+      background: #063353;
+      transform: scale(1.05);
+    }
+    /* MerrJep button style */
+    .btn-merrjep {
+      display: block;
+      width: 220px;
+      margin: 0 auto 30px auto;
+      padding: 15px 0;
+      text-align: center;
+      background: #ff5a00;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(255, 90, 0, 0.6);
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      animation: fadeIn 3.5s ease forwards;
+    }
+    .btn-merrjep:hover {
+      background: #cc4700;
+      transform: scale(1.05);
+    }
+    /* Navigation styles */
+    nav {
+      background: #0a3d62;
+      font-weight: 600;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      border-radius: 8px;
+      max-width: 900px;
+      margin: 30px auto 0;
+      padding: 0;
+    }
+    nav ul.nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 10px 20px;
+      margin: 0;
+      justify-content: center;
+    }
+    nav ul.nav-list li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      transition: background-color 0.3s ease;
+      border-radius: 4px;
+    }
+    nav ul.nav-list li a:hover,
+    nav ul.nav-list li a.active {
+      background-color: #063353;
+    }
+    /* Hamburger menu styles */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 1001;
+    }
+    .nav-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    /* Responsive nav for small screens */
+    @media (max-width: 768px) {
+      nav ul.nav-list {
+        display: none;
+        flex-direction: column;
+        background: #0a3d62;
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        border-radius: 0 0 8px 8px;
+        z-index: 1000;
+      }
+      nav ul.nav-list.show {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Mësimdhënie - Hava</h1>
+  <div class="container">
+    <h1>Mësimdhënie - Hava</h1>
 
-        <img
-            src="assets/images/hometutoring.png"
-            alt="Mësues Personal Online"
-            class="tutor-image"
-        />
+    <img
+      src="assets/images/hometutoring.png"
+      alt="Mësues Personal Online"
+      class="tutor-image"
+    />
 
-        <a href="https://www.merrjep.com/shpallja/biznes-pune/sherbime/ore-mesimdhenie/ne-shitje/prishtine/personal-tutor-online-ne-vend/15514902" rel="noopener" class="btn-merrjep">
-            Shiko në MerrJep
-        </a>
+    <a href="https://www.merrjep.com/shpallja/biznes-pune/sherbime/ore-mesimdhenie/ne-shitje/prishtine/personal-tutor-online-ne-vend/15514902" rel="noopener" class="btn-merrjep">
+      Shiko në MerrJep
+    </a>
 
-        <p>
-            Jam Hava, një tutore me përvojë që ofroj ndihmë individuale për studentë të shkollave të mesme dhe universitare, në lëndë të ndryshme akademike dhe programim. Mund të zhvilloj mësime në Prishtinë ose online përmes platformave si Zoom apo Google Meet.
-        </p>
+    <p>
+      Jam Hava, një tutore me përvojë që ofroj ndihmë individuale për studentë të shkollave të mesme dhe universitare, në lëndë të ndryshme akademike dhe programim. Mund të zhvilloj mësime në Prishtinë ose online përmes platformave si Zoom apo Google Meet.
+    </p>
 
-        <h2>Lëndët që mbuloj</h2>
+    <h2>Lëndët që mbuloj</h2>
+    <ul>
+      <li>📘 Gjuhë Angleze</li>
+      <li>🧮 Matematikë</li>
+      <li>🧲 Fizikë</li>
+      <li>💻 Programim:
         <ul>
-            <li>📘 Gjuhë Angleze</li>
-            <li>🧮 Matematikë</li>
-            <li>🧲 Fizikë</li>
-            <li>💻 Programim:
-                <ul>
-                    <li>Python</li>
-                    <li>C#</li>
-                    <li>HTML / CSS</li>
-                    <li>JavaScript</li>
-                </ul>
-            </li>
+          <li>Python</li>
+          <li>C#</li>
+          <li>HTML / CSS</li>
+          <li>JavaScript</li>
         </ul>
+      </li>
+    </ul>
 
-        <h2>Çka ofroj?</h2>
-        <ul>
-            <li>✅ Mësim i personalizuar sipas nevojës së nxënësit</li>
-            <li>✅ Përgatitje për teste dhe detyra</li>
-            <li>✅ Orar fleksibil dhe konsultim falas për herën e parë</li>
-        </ul>
+    <h2>Çka ofroj?</h2>
+    <ul>
+      <li>✅ Mësim i personalizuar sipas nevojës së nxënësit</li>
+      <li>✅ Përgatitje për teste dhe detyra</li>
+      <li>✅ Orar fleksibil dhe konsultim falas për herën e parë</li>
+    </ul>
 
-        <p>
-            Kontaktoni përmes shpalljes sime në MerrJep ose më shkruani direkt për më shumë detaje.
-        </p>
+    <p>
+      Kontaktoni përmes shpalljes sime në MerrJep ose më shkruani direkt për më shumë detaje.
+    </p>
 
-        <a href="mailto:hava22@gmail.com" class="btn-contact">Kontaktomë</a>
+    <a href="mailto:hava22@gmail.com" class="btn-contact">Kontaktomë</a>
+  </div>
 
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="tutoring.html">Mësimdhënie</a> |
-            <a href="contact.html">Kontakti</a>
-        </nav>
+  <nav>
+    <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tutoring.html" class="active">Mësimdhënie</a></li>
+      <li><a href="contact.html">Kontakti</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.querySelector('.nav-list');
+      if (toggle && navList) {
+        toggle.addEventListener('click', () => {
+          navList.classList.toggle('show');
+        });
+        toggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navList.classList.toggle('show');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 
