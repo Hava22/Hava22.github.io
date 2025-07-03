@@ -7,17 +7,177 @@
   <title>Hava's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    nav {
+      background: #21759b;
+      position: relative;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 60px;
+    }
+
+    .nav-brand {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      user-select: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list li a {
+      display: block;
+      padding: 15px 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-list li a:hover {
+      background: #145a78;
+      border-radius: 4px;
+    }
+
+    /* Responsive Nav */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #21759b;
+        display: none;
+        z-index: 999;
+      }
+
+      .nav-list.show {
+        display: flex;
+      }
+    }
+
+    /* Hover effect for skill cards */
+    #skills div[style*="flex: 1 1 280px;"]:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 900px) {
+      #skills div[style*="flex: 1 1 280px;"] {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Hero section style */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #e0f2f7;
+      font-family: 'Roboto', sans-serif;
+      color: #21759b;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* Showcase sections style */
+    .showcase {
+      max-width: 900px;
+      margin: 40px auto;
+      font-family: 'Roboto', sans-serif;
+      padding: 0 20px;
+      color: #444;
+    }
+
+    .showcase h2 {
+      color: #21759b;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .showcase p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      font-family: 'Roboto', sans-serif;
+      background-color: #21759b;
+      color: white;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #f1f1f1;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <nav>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tutoring.html">Tutoring</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <div class="nav-container">
+        <div class="nav-brand">Hava</div>
+        <div class="nav-toggle" onclick="document.querySelector('.nav-list').classList.toggle('show')">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="tutoring.html">Tutoring</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -117,101 +277,13 @@
     <p>&copy; 2025 Hava</p>
   </footer>
 
-  <style>
-    /* Hover effect for skill cards */
-    #skills div[style*="flex: 1 1 280px;"]:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Responsive layout for smaller screens */
-    @media (max-width: 900px) {
-      #skills div[style*="flex: 1 1 280px;"] {
-        flex: 1 1 100%;
-      }
-    }
-
-    /* Basic styles for nav */
-    nav ul.nav-list {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-      background: #21759b;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    nav ul.nav-list li a {
-      display: block;
-      padding: 15px 20px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    nav ul.nav-list li a:hover {
-      background-color: #145a78;
-      border-radius: 4px;
-    }
-
-    /* Hero section style */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #e0f2f7;
-      font-family: 'Roboto', sans-serif;
-      color: #21759b;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    /* Showcase sections style */
-    .showcase {
-      max-width: 900px;
-      margin: 40px auto;
-      font-family: 'Roboto', sans-serif;
-      padding: 0 20px;
-      color: #444;
-    }
-
-    .showcase h2 {
-      color: #21759b;
-      font-weight: 700;
-      margin-bottom: 15px;
-      font-size: 2rem;
-    }
-
-    .showcase p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-    }
-
-    /* Footer styles */
-    footer {
-      text-align: center;
-      padding: 25px 20px;
-      font-family: 'Roboto', sans-serif;
-      background-color: #21759b;
-      color: white;
-      margin-top: 60px;
-    }
-
-    footer a {
-      color: #f1f1f1;
-      text-decoration: underline;
-    }
-  </style>
+  <script>
+    // Toggle mobile menu on hamburger click
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+      document.querySelector('.nav-list').classList.toggle('show');
+    });
+  </script>
 </body>
 
 </html>
+
