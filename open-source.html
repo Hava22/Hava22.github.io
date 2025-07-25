@@ -1,32 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Open-Source Tools | Hava Jahaj</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open-Source Tools | Hava Jahaj</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Nav styles */
+    nav {
+      background: #21759b;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+    }
+
+    nav ul.nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul.nav-list li a {
+      display: block;
+      padding: 15px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul.nav-list li a:hover,
+    nav ul.nav-list li a.active {
+      background-color: #145a78;
+      border-radius: 4px;
+    }
+
+    /* Hamburger button */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 15px 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1001;
+    }
+
+    .nav-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Responsive nav for small screens */
+    @media (max-width: 768px) {
+      nav ul.nav-list {
+        display: none;
+        flex-direction: column;
+        background: #21759b;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav ul.nav-list.show {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* Page content styles */
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      font-family: 'Roboto', sans-serif;
+      color: #222;
+    }
+
+    h1 {
+      color: #21759b;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      color: #145a78;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #21759b;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #145a78;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Open-Source Tools</h1>
-        <nav>
-          <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="technology.html">Technology</a></li>
-            <li><a href="open-source.html">Open-Source</a></li>
-            <li><a href="digital-ethics.html">Digital Ethics</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Open Knowledge, Shared Power</h2>
-            <p>Open-source tools are more than free software—they represent a philosophy of transparency, collaboration, and collective empowerment. The open-source movement breaks down barriers to entry by making technology and knowledge accessible to all. It challenges monopolies on innovation and gives everyone—from seasoned developers to curious beginners—the ability to contribute, learn, and build.</p>
-            <p>In my projects, I rely on open-source platforms not only for practical functionality but also for the values they embody. Tools like Git, Linux, and Jupyter Notebooks enable scalable collaboration and reproducible research. They support a learning culture where code can be examined, modified, and improved by anyone. Open-source encourages a culture of peer-review and mutual growth—essential qualities for ethical and inclusive tech development.</p>
-            <p>🔗 <a href="https://opensource.guide/" target="_blank">The Open Source Guide</a></p>
-            <p>📹 <a href="https://www.youtube.com/watch?v=0fKg7e37bQE" target="_blank">Why Open Source is Important</a></p>
-        </section>
-    </main>
+  <header>
+    <nav>
+      <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="open-source.html" class="active">Open-Source</a></li>
+        <li><a href="digital-ethics.html">Digital Ethics</a></li>
+        <li><a href="tutoring.html">Tutoring</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Open-Source Tools</h1>
+    <section>
+      <h2>Open Knowledge, Shared Power</h2>
+      <p>Open-source tools are more than free software—they represent a philosophy of transparency, collaboration, and collective empowerment. The open-source movement breaks down barriers to entry by making technology and knowledge accessible to all. It challenges monopolies on innovation and gives everyone—from seasoned developers to curious beginners—the ability to contribute, learn, and build.</p>
+      <p>In my projects, I rely on open-source platforms not only for practical functionality but also for the values they embody. Tools like Git, Linux, and Jupyter Notebooks enable scalable collaboration and reproducible research. They support a learning culture where code can be examined, modified, and improved by anyone. Open-source encourages a culture of peer-review and mutual growth—essential qualities for ethical and inclusive tech development.</p>
+      <p>🔗 <a href="https://opensource.guide/" target="_blank" rel="noopener noreferrer">The Open Source Guide</a></p>
+      <p>📹 <a href="https://www.youtube.com/watch?v=0fKg7e37bQE" target="_blank" rel="noopener noreferrer">Why Open Source is Important</a></p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.querySelector('.nav-list');
+      if (toggle && navList) {
+        toggle.addEventListener('click', () => {
+          navList.classList.toggle('show');
+        });
+
+        toggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navList.classList.toggle('show');
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>

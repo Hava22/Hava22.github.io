@@ -1,32 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Technology | Hava Jahaj</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technology | Hava Jahaj</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Nav styles copied from your example */
+    nav {
+      background: #21759b;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+    }
+
+    nav ul.nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul.nav-list li a {
+      display: block;
+      padding: 15px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul.nav-list li a:hover,
+    nav ul.nav-list li a.active {
+      background-color: #145a78;
+      border-radius: 4px;
+    }
+
+    /* Hamburger button */
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 15px 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1001;
+    }
+
+    .nav-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Responsive nav for small screens */
+    @media (max-width: 768px) {
+      nav ul.nav-list {
+        display: none;
+        flex-direction: column;
+        background: #21759b;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav ul.nav-list.show {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* Page content styles */
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      font-family: 'Roboto', sans-serif;
+      color: #222;
+    }
+
+    h1 {
+      color: #21759b;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      color: #145a78;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #21759b;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #145a78;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Technology</h1>
-        <nav>
-          <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="technology.html">Technology</a></li>
-            <li><a href="open-source.html">Open-Source</a></li>
-            <li><a href="digital-ethics.html">Digital Ethics</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Navigating the Digital Landscape</h2>
-            <p>Technology is more than tools—it is a language, a framework, and an enabler of new forms of connection and knowledge. In our interconnected world, technology shapes how we learn, communicate, and build. It influences our values and choices, while also offering unprecedented possibilities for accessibility and innovation. From the structure of websites to the complexity of data pipelines, technology defines how we interact with information.</p>
-            <p>My work with technology focuses on both building and analyzing digital systems. I use programming languages like Python and JavaScript, and frameworks such as Flask, to design tools that are both functional and socially meaningful. I believe in human-centered design—creating interfaces that are not only efficient but also considerate of diverse user needs and experiences. The future of technology lies not just in faster computation, but in smarter, more empathetic applications of its power.</p>
-            <p>📘 <a href="https://www.freecodecamp.org/news/what-is-human-centered-design/" target="_blank">What is Human-Centered Design?</a></p>
-            <p>📹 <a href="https://www.youtube.com/watch?v=kcyYi6y9aHk" target="_blank">The Future of Tech: Empathy and Design</a></p>
-        </section>
-    </main>
+  <header>
+    <nav>
+      <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="technology.html" class="active">Technology</a></li>
+        <li><a href="open-source.html">Open-Source</a></li>
+        <li><a href="digital-ethics.html">Digital Ethics</a></li>
+        <li><a href="tutoring.html">Tutoring</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Technology</h1>
+    <section>
+      <h2>Navigating the Digital Landscape</h2>
+      <p>Technology is more than tools—it is a language, a framework, and an enabler of new forms of connection and knowledge. In our interconnected world, technology shapes how we learn, communicate, and build. It influences our values and choices, while also offering unprecedented possibilities for accessibility and innovation. From the structure of websites to the complexity of data pipelines, technology defines how we interact with information.</p>
+      <p>My work with technology focuses on both building and analyzing digital systems. I use programming languages like Python and JavaScript, and frameworks such as Flask, to design tools that are both functional and socially meaningful. I believe in human-centered design—creating interfaces that are not only efficient but also considerate of diverse user needs and experiences. The future of technology lies not just in faster computation, but in smarter, more empathetic applications of its power.</p>
+      <p>📘 <a href="https://www.freecodecamp.org/news/what-is-human-centered-design/" target="_blank" rel="noopener noreferrer">What is Human-Centered Design?</a></p>
+      <p>📹 <a href="https://www.youtube.com/watch?v=kcyYi6y9aHk" target="_blank" rel="noopener noreferrer">The Future of Tech: Empathy and Design</a></p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.querySelector('.nav-list');
+      if (toggle && navList) {
+        toggle.addEventListener('click', () => {
+          navList.classList.toggle('show');
+        });
+
+        toggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navList.classList.toggle('show');
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>

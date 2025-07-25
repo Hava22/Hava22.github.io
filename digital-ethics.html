@@ -1,32 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Digital Ethics | Hava Jahaj</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Ethics | Hava Jahaj</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    nav {
+      background: #21759b;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+    }
+
+    nav ul.nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul.nav-list li a {
+      display: block;
+      padding: 15px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul.nav-list li a:hover,
+    nav ul.nav-list li a.active {
+      background-color: #145a78;
+      border-radius: 4px;
+    }
+
+    .nav-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 15px 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1001;
+    }
+
+    .nav-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      nav ul.nav-list {
+        display: none;
+        flex-direction: column;
+        background: #21759b;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav ul.nav-list.show {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      font-family: 'Roboto', sans-serif;
+      color: #222;
+    }
+
+    h1 {
+      color: #21759b;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      color: #145a78;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #21759b;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #145a78;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Digital Ethics</h1>
-        <nav>
-          <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="technology.html">Technology</a></li>
-            <li><a href="open-source.html">Open-Source</a></li>
-            <li><a href="digital-ethics.html">Digital Ethics</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Ethics in the Age of Code</h2>
-            <p>As algorithms govern more aspects of our daily lives, from the news we see to the services we receive, the ethical stakes of technology have never been higher. Digital ethics explores how power, bias, accountability, and consent operate within systems we often take for granted. Behind every algorithm is a set of choices—about what to prioritize, whom to include, and what to ignore.</p>
-            <p>I see ethical tech not as a checklist but as a continuous, critical reflection on the impact of our work. In this context, I focus on how surveillance, automation, and data collection practices can be challenged through transparency, advocacy, and better design. Ethical coding practices, fair data representation, and inclusive research methodologies are central to building trust in technology. By aligning tech development with human values, we can create systems that not only work, but work justly.</p>
-            <p>📘 <a href="https://datasociety.net/wp-content/uploads/2019/03/DataSociety_Ethical_Design_Primer_2019.pdf" target="_blank">Ethical Design Primer – Data & Society</a></p>
-            <p>📹 <a href="https://www.youtube.com/watch?v=2g88Ju6nkcg" target="_blank">How Ethical is Your Algorithm?</a></p>
-        </section>
-    </main>
+  <header>
+    <nav>
+      <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="open-source.html">Open-Source</a></li>
+        <li><a href="digital-ethics.html" class="active">Digital Ethics</a></li>
+        <li><a href="tutoring.html">Tutoring</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Digital Ethics</h1>
+    <section>
+      <h2>Ethics in the Age of Code</h2>
+      <p>As algorithms govern more aspects of our daily lives, from the news we see to the services we receive, the ethical stakes of technology have never been higher. Digital ethics explores how power, bias, accountability, and consent operate within systems we often take for granted. Behind every algorithm is a set of choices—about what to prioritize, whom to include, and what to ignore.</p>
+      <p>I see ethical tech not as a checklist but as a continuous, critical reflection on the impact of our work. In this context, I focus on how surveillance, automation, and data collection practices can be challenged through transparency, advocacy, and better design. Ethical coding practices, fair data representation, and inclusive research methodologies are central to building trust in technology. By aligning tech development with human values, we can create systems that not only work, but work justly.</p>
+      <p>📘 <a href="https://datasociety.net/wp-content/uploads/2019/03/DataSociety_Ethical_Design_Primer_2019.pdf" target="_blank" rel="noopener noreferrer">Ethical Design Primer – Data & Society</a></p>
+      <p>📹 <a href="https://www.youtube.com/watch?v=2g88Ju6nkcg" target="_blank" rel="noopener noreferrer">How Ethical is Your Algorithm?</a></p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const navList = document.querySelector('.nav-list');
+      if (toggle && navList) {
+        toggle.addEventListener('click', () => {
+          navList.classList.toggle('show');
+        });
+
+        toggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navList.classList.toggle('show');
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
