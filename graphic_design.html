@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphic Design Portfolio | Hava Jahaj</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family: 'Roboto', sans-serif; background-color: #f4f4f4; color: #333; }
+  a { text-decoration: none; color: inherit; }
+
+  /* Header */
+  header { background-color: #222; color: white; padding: 40px 20px; text-align: center; }
+  header h1 { font-size: 2.5em; margin-bottom: 10px; }
+  header p { font-size: 1.2em; color: #bbb; }
+
+  /* Navigation */
+  nav { background-color: #333; }
+  nav ul { display: flex; justify-content: center; list-style: none; }
+  nav ul li { margin: 0 15px; }
+  nav ul li a { color: white; padding: 15px 0; display: block; font-weight: bold; }
+  nav ul li a:hover { color: #f4c242; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 60px 20px; background: #eee; }
+  .hero h2 { font-size: 2em; margin-bottom: 20px; }
+  .hero p { font-size: 1.1em; max-width: 700px; margin: 0 auto; }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; padding: 40px 20px; }
+  .gallery figure { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s; }
+  .gallery figure:hover { transform: scale(1.05); }
+  .gallery img { width: 100%; display: block; }
+  .gallery figcaption { padding: 15px; text-align: center; font-weight: bold; }
+
+  /* Modal */
+  .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
+  .modal-content { background: #fff; margin: 10% auto; padding: 20px; border-radius: 8px; width: 80%; max-width: 700px; position: relative; text-align: center; }
+  .modal-content img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+  .close { position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; color: #333; cursor: pointer; }
+
+  /* Skills */
+  .skills { background: #fff; padding: 40px 20px; text-align: center; }
+  .skills h2 { margin-bottom: 20px; }
+  .skills p { max-width: 600px; margin: 0 auto 10px auto; }
+
+  /* Contact */
+  .contact { background: #eee; padding: 40px 20px; text-align: center; }
+  .contact a { color: #333; font-weight: bold; }
+  .contact a:hover { color: #f4c242; }
+
+  /* Footer */
+  footer { background-color: #222; color: white; text-align: center; padding: 20px; margin-top: 20px; }
+
+  @media(max-width: 600px){ nav ul { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Your Name</h1>
+  <p>Graphic Designer | Digital Media | Creative Portfolio</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="graphic_design.html">Graphic Design</a></li>
+    <li><a href="work05.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h2>Showcasing My Graphic Design Skills</h2>
+  <p>Explore my best works including social media visuals, infographics, branding projects, and digital campaigns I’ve created for online audiences.</p>
+</section>
+
+<section class="gallery">
+  <figure onclick="openModal('project1')">
+    <img src="assets/images/graphic_design/project1.png" alt="Project 1">
+    <figcaption>Social Media Campaign</figcaption>
+  </figure>
+  <figure onclick="openModal('project2')">
+    <img src="assets/images/graphic_design/project2.png" alt="Project 2">
+    <figcaption>Infographic Design</figcaption>
+  </figure>
+  <figure onclick="openModal('project3')">
+    <img src="assets/images/graphic_design/project3.png" alt="Project 3">
+    <figcaption>Logo & Branding</figcaption>
+  </figure>
+  <figure onclick="openModal('project4')">
+    <img src="assets/images/graphic_design/project4.png" alt="Project 4">
+    <figcaption>Event Poster</figcaption>
+  </figure>
+</section>
+
+<!-- Modals -->
+<div id="project1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project1')">&times;</span>
+    <img src="assets/images/graphic_design/project1.png" alt="Project 1">
+    <p>Social Media Campaign – Tools used: Canva, Photoshop. Description: Created graphics for online awareness campaign with engaging visuals and call-to-action.</p>
+  </div>
+</div>
+
+<div id="project2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project2')">&times;</span>
+    <img src="assets/images/graphic_design/project2.png" alt="Project 2">
+    <p>Infographic Design – Tools used: Illustrator, Canva. Description: Visualized complex data into simple, eye-catching infographics for Wikimedia project.</p>
+  </div>
+</div>
+
+<div id="project3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project3')">&times;</span>
+    <img src="assets/images/graphic_design/project3.png" alt="Project 3">
+    <p>Logo & Branding – Tools used: Illustrator, Photoshop. Description: Developed logo and branding elements for a fictional company to showcase design versatility.</p>
+  </div>
+</div>
+
+<div id="project4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project4')">&times;</span>
+    <img src="assets/images/graphic_design/project4.png" alt="Project 4">
+    <p>Event Poster – Tools used: Photoshop, Canva. Description: Designed promotional poster for an online event with clear layout and vibrant colors.</p>
+  </div>
+</div>
+
+<section class="skills">
+  <h2>Skills & Tools</h2>
+  <p>Adobe Photoshop, Illustrator, Canva, Figma, InDesign</p>
+  <p>Visual Storytelling, Branding, Infographics, Social Media Design</p>
+</section>
+
+<section class="contact">
+  <h2>Contact Me</h2>
+  <p>Email: <a href="mailto:youremail@example.com">hava.jahaj22@gmail.com</a></p>
+  <p>Telegram: <a href="https://t.me/yourusername" target="_blank">t.me/Hava</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Hava Jahaj | All Rights Reserved</p>
+</footer>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  // Close modal when clicking outside content
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if(event.target == modal) modal.style.display = "none";
+    });
+  }
+</script>
+
+</body>
+</html>
