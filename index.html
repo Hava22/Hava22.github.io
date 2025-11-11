@@ -1,277 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hava's Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <style>
-    /* Basic styles for nav */
-    nav {
-      background: #21759b;
-      font-family: 'Roboto', sans-serif;
-      position: relative;
-    }
-
-    nav ul.nav-list {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul.nav-list li a {
-      display: block;
-      padding: 15px 20px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    nav ul.nav-list li a:hover {
-      background-color: #145a78;
-      border-radius: 4px;
-    }
-
-    /* Hamburger button */
-    .nav-toggle {
-      display: none;
-      cursor: pointer;
-      padding: 15px 20px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 1001;
-    }
-
-    .nav-toggle div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      transition: 0.4s;
-    }
-
-    /* Responsive nav for small screens */
-    @media (max-width: 768px) {
-      nav ul.nav-list {
-        display: none;
-        flex-direction: column;
-        background: #21759b;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-      }
-
-      nav ul.nav-list.show {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <nav>
-      <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      
-  <ul class="nav-list">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="technology.html">Technology</a></li>
-    <li><a href="open-source.html">Open-Source</a></li>
-    <li><a href="digital-ethics.html">Digital Ethics</a></li>
-    <li><a href="tutoring.html">Tutoring</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="graphic_design.html">Graphic Design</a></li>
-
-  </ul>
-</nav>
-
-       </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <h1>Welcome to Hava's Portfolio</h1>
-      <p>Showcasing content writing, copying skills, and tutoring experience.</p>
-    </section>
-
-    <section class="showcase">
-      <h2>Content Writing & Copying Skills</h2>
-      <p>
-        I excel at creating clear, engaging, and targeted content that connects with audiences. My skills
-        include SEO-friendly writing, editing, and adapting content for various platforms.
-      </p>
-    </section>
-
-    <section class="showcase">
-      <h2>Tutoring Experience</h2>
-      <p>
-        Experienced in tutoring subjects such as English, Mathematics, Physics, and programming languages like
-        Python and C#. I focus on helping students understand core concepts and develop practical problem-solving
-        skills.
-      </p>
-      <p>
-        For more details about my tutoring services, please visit the <a href="tutoring.html">Tutoring page</a>.
-      </p>
-    </section>
-
-
-<section id="graphic-design" style="padding: 60px 20px; background-color: #f9f9f9; font-family: 'Roboto', sans-serif; max-width: 1000px; margin: 60px auto; border-radius: 12px;">
-  <h2 style="text-align: center; font-size: 2.8rem; color: #222; margin-bottom: 40px; font-weight: 700;">
-    Graphic Design
-  </h2>
-
-  <p style="text-align: center; font-size: 1.1rem; color: #555; max-width: 800px; margin: 0 auto 40px;">
-    Explore my creative works in graphic design, including social media visuals, infographics, logos, and promotional materials.
-  </p>
-
-  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-    <div style="flex: 1 1 280px; background: #f6f8fa; border-radius: 12px; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-      <h3 style="color: #e74c3c; font-size: 1.6rem; margin-bottom: 15px;">Social Media Campaign</h3>
-      <p style="color: #444; font-size: 1rem; line-height: 1.6;">
-        Created engaging social media graphics to boost online awareness using Canva and Photoshop.
-      </p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava's Portfolio - WordPress Developer & Content Creator</title>
+    <link rel="stylesheet" href="wp-theme.css"><body>
+    <!-- WordPress Admin Bar -->
+    <div class="wp-admin-bar">
+        <div class="ab-left">
+            <a href="index.html" class="ab-item">Hava's Portfolio Dashboard</a>
+        </div>
+        <div class="ab-right">
+            <a href="mailto:hava22@gmail.com" class="ab-item">hava22@gmail.com</a>
+            <a href="contact.html" class="ab-item">Contact</a>
+        </div>
     </div>
 
-    <div style="flex: 1 1 280px; background: #f6f8fa; border-radius: 12px; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-      <h3 style="color: #3498db; font-size: 1.6rem; margin-bottom: 15px;">Infographic Design</h3>
-      <p style="color: #444; font-size: 1rem; line-height: 1.6;">
-        Visualized complex data into clear, eye-catching infographics using Illustrator and Canva.
-      </p>
-    </div>
+    <!-- WordPress Sidebar -->
+    <nav class="wp-sidebar">
+        <ul class="wp-sidebar-menu">
+            <li><a href="index.html" class="active"><span class="menu-icon">🏠</span> <span>Dashboard</span></a></li>
+            <li><a href="about.html"><span class="menu-icon">👤</span> <span>About Me</span></a></li>
+            <li><a href="technology.html"><span class="menu-icon">💻</span> <span>Technology</span></a></li>
+            <li><a href="open-source.html"><span class="menu-icon">🔓</span> <span>Open Source</span></a></li>
+            <li><a href="digital-ethics.html"><span class="menu-icon">⚖️</span> <span>Digital Ethics</span></a></li>
+            <li><a href="tutoring.html"><span class="menu-icon">🎓</span> <span>Tutoring</span></a></li>
+            <li><a href="graphic_design.html"><span class="menu-icon">🎨</span> <span>Graphic Design</span></a></li>
+            <li><a href="contact.html"><span class="menu-icon">📧</span> <span>Contact</span></a></li>
+        </ul>
+    </nav>
 
-    <div style="flex: 1 1 280px; background: #f6f8fa; border-radius: 12px; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-      <h3 style="color: #2ecc71; font-size: 1.6rem; margin-bottom: 15px;">Logo & Branding</h3>
-      <p style="color: #444; font-size: 1rem; line-height: 1.6;">
-        Developed logos and branding elements for projects, demonstrating creativity and design versatility.
-      </p>
-    </div>
-
-    <div style="flex: 1 1 280px; background: #f6f8fa; border-radius: 12px; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-      <h3 style="color: #f39c12; font-size: 1.6rem; margin-bottom: 15px;">Event Poster</h3>
-      <p style="color: #444; font-size: 1rem; line-height: 1.6;">
-        Designed promotional posters for events with clean layouts and vibrant visuals using Photoshop and Canva.
-      </p>
-    </div>
-  </div>
-
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="graphic_design.html" style="display: inline-block; padding: 12px 25px; background-color: #e74c3c; color: #fff; font-weight: 600; border-radius: 8px; text-decoration: none; transition: background 0.3s;">
-      View Full Portfolio
-    </a>
-  </div>
-</section>
-
-
-
-
-    
-
-    <!-- Skills Section -->
-    <section id="skills" style="padding: 60px 20px; background-color: #fff; font-family: 'Roboto', sans-serif; max-width: 1000px; margin: 60px auto;">
-      <h2 style="text-align: center; font-size: 2.8rem; color: #222; margin-bottom: 40px; font-weight: 700;">
-        My Professional Skills
-      </h2>
-
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
-        <div style="flex: 1 1 280px; background: #f6f8fa; border-radius: 12px; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-          <h3 style="color: #21759b; font-size: 1.6rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-            <span>🛠️</span> WordPress Development
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; color: #444; font-size: 1rem; line-height: 1.6;">
-            <li>✅ Custom Theme & Plugin Development</li>
-            <li>✅ Site Optimization & Security</li>
-            <li>✅ WooCommerce Integration</li>
-            <li>✅ Responsive Design & SEO Best Practices</li>
-          </ul>
-          <div style="margin-top: 20px;">
-            <label style="font-weight: 600; color: #21759b;">Skill Level</label>
-            <div style="background: #ddd; border-radius: 8px; overflow: hidden; height: 14px; margin-top: 8px;">
-              <div style="width: 90%; background-color: #21759b; height: 100%; border-radius: 8px;"></div>
+    <!-- Main Content Area -->
+    <main class="wp-content">
+        <!-- Welcome Panel -->
+        <div class="welcome-panel">
+            <h2>Welcome to Your Portfolio Dashboard</h2>
+            <p>Hello, I'm Hava! This is my professional portfolio showcasing my work in WordPress development, content creation, and digital services.</p>
+            <div style="margin-top: 15px;">
+                <a href="about.html" class="wp-button">Learn More About Me</a>
+                <a href="contact.html" class="wp-button wp-button-secondary">Get In Touch</a>
             </div>
-          </div>
         </div>
 
-        <div style="flex: 1 1 280px; background: #f6f8fa; border-radius: 12px; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-          <h3 style="color: #e67e22; font-size: 1.6rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-            <span>✍️</span> Content Creation
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; color: #444; font-size: 1rem; line-height: 1.6;">
-            <li>✅ SEO-Optimized Articles & Blog Posts</li>
-            <li>✅ Copywriting & Editing</li>
-            <li>✅ Video & Visual Content Production</li>
-            <li>✅ Content Strategy & Planning</li>
-          </ul>
-          <div style="margin-top: 20px;">
-            <label style="font-weight: 600; color: #e67e22;">Skill Level</label>
-            <div style="background: #ddd; border-radius: 8px; overflow: hidden; height: 14px; margin-top: 8px;">
-              <div style="width: 85%; background-color: #e67e22; height: 100%; border-radius: 8px;"></div>
+        <!-- Main Dashboard Widgets -->
+        <div class="dashboard-widgets">
+            <!-- Left Column -->
+            <div class="dashboard-column">
+                <!-- Skills Widget -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Professional Skills</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <div class="skill-progress">
+                            <div class="skill-label">
+                                <span>WordPress Development</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-label">
+                                <span>Content Creation</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-label">
+                                <span>Graphic Design</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-label">
+                                <span>Digital Ethics Consulting</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Projects -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Featured Projects</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <table class="wp-table">
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Custom WordPress Theme</td>
+                                    <td>Development</td>
+                                    <td><span style="color: var(--wp-success);">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Content Strategy</td>
+                                    <td>Writing</td>
+                                    <td><span style="color: var(--wp-warning);">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Wikimedia Contributions</td>
+                                    <td>Open Source</td>
+                                    <td><span style="color: var(--wp-success);">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Graphic Design Portfolio</td>
+                                    <td>Design</td>
+                                    <td><span style="color: var(--wp-success);">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Right Column -->
+            <div class="dashboard-column">
+                <!-- Quick Stats -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Portfolio Stats</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <div style="text-align: center; padding: 20px 0;">
+                            <div style="font-size: 2em; font-weight: bold; color: var(--wp-primary);">50+</div>
+                            <div style="color: var(--wp-text-light);">Projects Completed</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px 0;">
+                            <div style="font-size: 2em; font-weight: bold; color: var(--wp-success);">98%</div>
+                            <div style="color: var(--wp-text-light);">Client Satisfaction</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px 0;">
+                            <div style="font-size: 2em; font-weight: bold; color: var(--wp-warning);">5+</div>
+                            <div style="color: var(--wp-text-light);">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Quick Actions</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="contact.html" class="wp-button">📧 Contact Me</a>
+                            <a href="graphic_design.html" class="wp-button wp-button-secondary">🎨 View Designs</a>
+                            <a href="technology.html" class="wp-button wp-button-secondary">💻 Tech Stack</a>
+                            <a href="tutoring.html" class="wp-button wp-button-secondary">🎓 Tutoring Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div style="flex: 1 1 280px; background: #f6f8fa; border-radius: 12px; padding: 25px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-          <h3 style="color: #3498db; font-size: 1.6rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-            <span>📱</span> Social Media Management
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0; color: #444; font-size: 1rem; line-height: 1.6;">
-            <li>✅ Platform Strategy & Campaign Planning</li>
-            <li>✅ Content Scheduling & Community Engagement</li>
-            <li>✅ Analytics & Performance Reporting</li>
-            <li>✅ Ad Management & Growth Tactics</li>
-          </ul>
-          <div style="margin-top: 20px;">
-            <label style="font-weight: 600; color: #3498db;">Skill Level</label>
-            <div style="background: #ddd; border-radius: 8px; overflow: hidden; height: 14px; margin-top: 8px;">
-              <div style="width: 80%; background-color: #3498db; height: 100%; border-radius: 8px;"></div>
+        <!-- Services Overview -->
+        <div class="metabox-holder">
+            <div class="postbox">
+                <div class="postbox-header">
+                    <h3 class="postbox-title">WordPress Development</h3>
+                </div>
+                <div class="postbox-content">
+                    <p>Custom theme development, plugin customization, and WordPress optimization services.</p>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>Responsive WordPress Themes</li>
+                        <li>E-commerce Solutions (WooCommerce)</li>
+                        <li>Performance Optimization</li>
+                        <li>Security Hardening</li>
+                    </ul>
+                    <a href="technology.html" class="wp-button">View Details</a>
+                </div>
             </div>
-          </div>
+
+            <div class="postbox">
+                <div class="postbox-header">
+                    <h3 class="postbox-title">Content Creation</h3>
+                </div>
+                <div class="postbox-content">
+                    <p>Professional content writing and copywriting services for digital platforms.</p>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>SEO-Optimized Articles</li>
+                        <li>Blog Content Strategy</li>
+                        <li>Social Media Content</li>
+                        <li>Technical Writing</li>
+                    </ul>
+                    <a href="open-source.html" class="wp-button">View Writing Samples</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>Contact me at <a href="mailto:hava22@gmail.com">hava22@gmail.com</a></p>
-    <p>&copy; 2025 Hava</p>
-  </footer>
+        <!-- Content Writing & Tutoring Section -->
+        <div class="content-section">
+            <h3>Content Writing & Tutoring Expertise</h3>
+            <p>I excel at creating clear, engaging, and targeted content that connects with audiences. My skills include SEO-friendly writing, editing, and adapting content for various platforms.</p>
+            
+            <div class="design-grid">
+                <div class="design-item">
+                    <h4>Content Writing</h4>
+                    <p>SEO-optimized articles, blog posts, and digital content that drives engagement and conversions.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Copywriting</h4>
+                    <p>Persuasive and compelling copy that captures attention and communicates value effectively.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Tutoring Services</h4>
+                    <p>Experienced in tutoring English, Mathematics, Physics, and programming languages like Python and C#.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <a href="tutoring.html" class="wp-button">Learn About Tutoring</a>
+            </div>
+        </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector('.nav-toggle');
-      const navList = document.querySelector('.nav-list');
-      if (toggle && navList) {
-        toggle.addEventListener('click', () => {
-          navList.classList.toggle('show');
+        <!-- Graphic Design Showcase -->
+        <div class="design-showcase">
+            <h3>Graphic Design Portfolio</h3>
+            <p>Explore my creative works in graphic design, including social media visuals, infographics, logos, and promotional materials.</p>
+            
+            <div class="design-grid">
+                <div class="design-item">
+                    <h4>Social Media Campaign</h4>
+                    <p>Created engaging social media graphics to boost online awareness using Canva and Photoshop.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Infographic Design</h4>
+                    <p>Visualized complex data into clear, eye-catching infographics using Illustrator and Canva.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Logo & Branding</h4>
+                    <p>Developed logos and branding elements for projects, demonstrating creativity and design versatility.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Event Poster</h4>
+                    <p>Designed promotional posters for events with clean layouts and vibrant visuals using Photoshop and Canva.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px; text-align: center;">
+                <a href="graphic_design.html" class="wp-button">View Full Design Portfolio</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation to progress bars
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+
+            // Mobile menu toggle
+            const mobileToggle = document.createElement('div');
+            mobileToggle.className = 'mobile-menu-toggle';
+            mobileToggle.innerHTML = '☰';
+            mobileToggle.style.cssText = `
+                position: fixed;
+                top: 8px;
+                left: 10px;
+                z-index: 10000;
+                background: var(--wp-primary);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+                display: none;
+            `;
+            document.body.appendChild(mobileToggle);
+
+            mobileToggle.addEventListener('click', function() {
+                document.querySelector('.wp-sidebar').classList.toggle('mobile-open');
+            });
+
+            // Check screen size for mobile
+            function checkScreenSize() {
+                if (window.innerWidth <= 480) {
+                    mobileToggle.style.display = 'block';
+                    document.querySelector('.wp-sidebar').classList.add('mobile-open');
+                } else {
+                    mobileToggle.style.display = 'none';
+                    document.querySelector('.wp-sidebar').classList.remove('mobile-open');
+                }
+            }
+
+            checkScreenSize();
+            window.addEventListener('resize', checkScreenSize);
+
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.wp-sidebar-menu a');
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
         });
-
-        // Optional: allow toggling with keyboard (Enter or Space)
-        toggle.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            navList.classList.toggle('show');
-          }
-        });
-      }
-    });
-  </script>
+    </script>
 </body>
-
 </html>
-

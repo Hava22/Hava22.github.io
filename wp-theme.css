@@ -1,0 +1,500 @@
+/* WordPress Admin Theme Colors */
+:root {
+    --wp-primary: #2271b1;
+    --wp-primary-dark: #135e96;
+    --wp-secondary: #f6f7f7;
+    --wp-border: #c3c4c7;
+    --wp-text: #2c3338;
+    --wp-text-light: #50575e;
+    --wp-white: #fff;
+    --wp-success: #00a32a;
+    --wp-warning: #dba617;
+    --wp-error: #d63638;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background: var(--wp-secondary);
+    color: var(--wp-text);
+    line-height: 1.6;
+}
+
+/* WordPress Admin Bar Style Header */
+.wp-admin-bar {
+    background: var(--wp-primary);
+    color: var(--wp-white);
+    padding: 0 20px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.wp-admin-bar .ab-left,
+.wp-admin-bar .ab-right {
+    display: flex;
+    align-items: center;
+}
+
+.wp-admin-bar .ab-item {
+    color: var(--wp-white);
+    text-decoration: none;
+    padding: 0 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.wp-admin-bar .ab-item:hover {
+    background: var(--wp-primary-dark);
+}
+
+/* Main Navigation - WordPress Sidebar Style */
+.wp-sidebar {
+    position: fixed;
+    left: 0;
+    top: 32px;
+    width: 160px;
+    height: calc(100vh - 32px);
+    background: var(--wp-text);
+    color: var(--wp-white);
+    padding: 20px 0;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+.wp-sidebar.mobile-open {
+    display: block !important;
+}
+
+.wp-sidebar-menu {
+    list-style: none;
+}
+
+.wp-sidebar-menu li {
+    margin-bottom: 2px;
+}
+
+.wp-sidebar-menu a {
+    color: var(--wp-white);
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border-radius: 2px;
+}
+
+.wp-sidebar-menu a:hover,
+.wp-sidebar-menu a.active {
+    background: var(--wp-primary);
+}
+
+.wp-sidebar-menu .menu-icon {
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* Main Content Area */
+.wp-content {
+    margin-left: 160px;
+    margin-top: 32px;
+    padding: 40px;
+    min-height: calc(100vh - 32px);
+    transition: margin-left 0.3s ease;
+}
+
+/* WordPress Metabox Style Cards */
+.metabox-holder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.postbox {
+    background: var(--wp-white);
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.postbox-header {
+    background: var(--wp-secondary);
+    border-bottom: 1px solid var(--wp-border);
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postbox-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--wp-text);
+    margin: 0;
+}
+
+.postbox-content {
+    padding: 12px;
+}
+
+/* WordPress Button Styles */
+.wp-button {
+    background: var(--wp-primary);
+    color: var(--wp-white);
+    border: 1px solid var(--wp-primary-dark);
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.wp-button:hover {
+    background: var(--wp-primary-dark);
+    color: var(--wp-white);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.wp-button-secondary {
+    background: var(--wp-secondary);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+
+.wp-button-secondary:hover {
+    background: #e0e0e0;
+}
+
+/* WordPress Table Styles */
+.wp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--wp-white);
+}
+
+.wp-table th,
+.wp-table td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--wp-border);
+}
+
+.wp-table th {
+    background: var(--wp-secondary);
+    font-weight: 600;
+}
+
+.wp-table tr:hover {
+    background: var(--wp-secondary);
+}
+
+/* WordPress Form Styles */
+.wp-form-table {
+    width: 100%;
+}
+
+.wp-form-table th {
+    width: 150px;
+    padding: 15px 10px 15px 0;
+    font-weight: 600;
+    text-align: left;
+    vertical-align: top;
+}
+
+.wp-form-table td {
+    padding: 10px 0;
+}
+
+.wp-form-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: inherit;
+}
+
+.wp-form-input:focus {
+    border-color: var(--wp-primary);
+    box-shadow: 0 0 0 1px var(--wp-primary);
+    outline: 2px solid transparent;
+}
+
+/* Dashboard Widgets */
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.welcome-panel {
+    background: var(--wp-white);
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-panel h2 {
+    color: var(--wp-primary);
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* Skill Progress Bars */
+.skill-progress {
+    margin: 15px 0;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.progress-bar {
+    background: var(--wp-secondary);
+    border-radius: 3px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--wp-primary);
+    transition: width 0.3s ease;
+}
+
+/* Graphic Design Section */
+.design-showcase {
+    background: var(--wp-white);
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.design-item {
+    background: var(--wp-secondary);
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid var(--wp-primary);
+    transition: transform 0.2s ease;
+}
+
+.design-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.design-item h4 {
+    color: var(--wp-primary);
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+/* Content Sections */
+.content-section {
+    background: var(--wp-white);
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    color: var(--wp-primary);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--wp-border);
+    padding-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* Status Indicators */
+.status-completed {
+    color: var(--wp-success);
+    font-weight: 600;
+}
+
+.status-in-progress {
+    color: var(--wp-warning);
+    font-weight: 600;
+}
+
+.status-active {
+    color: var(--wp-primary);
+    font-weight: 600;
+}
+
+/* Lists */
+ul, ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Links */
+a {
+    color: var(--wp-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--wp-primary-dark);
+    text-decoration: underline;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    position: fixed;
+    top: 8px;
+    left: 10px;
+    z-index: 10000;
+    background: var(--wp-primary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wp-sidebar {
+        width: 60px;
+    }
+    
+    .wp-sidebar-menu span:not(.menu-icon) {
+        display: none;
+    }
+    
+    .wp-content {
+        margin-left: 60px;
+        padding: 20px;
+    }
+    
+    .metabox-holder {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-widgets {
+        grid-template-columns: 1fr;
+    }
+    
+    .design-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .wp-sidebar {
+        display: none;
+        width: 200px;
+    }
+    
+    .wp-sidebar.mobile-open {
+        display: block;
+    }
+    
+    .wp-sidebar-menu span:not(.menu-icon) {
+        display: inline;
+    }
+    
+    .wp-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .welcome-panel {
+        padding: 15px;
+    }
+    
+    .postbox-content {
+        padding: 10px;
+    }
+}
+
+/* Animation for progress bars */
+@keyframes progressFill {
+    from {
+        width: 0;
+    }
+    to {
+        width: attr(style);
+    }
+}
+
+.progress-fill {
+    animation: progressFill 1s ease-out;
+}
+
+/* Print Styles */
+@media print {
+    .wp-admin-bar,
+    .wp-sidebar,
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    .wp-content {
+        margin-left: 0;
+        margin-top: 0;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .postbox {
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+}
