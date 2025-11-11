@@ -1,195 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - Hava</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f7f7;
-      color: #222;
-      margin: 0;
-      padding: 0 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #0a3d62;
-      margin-top: 40px;
-    }
-    .container {
-      max-width: 600px;
-      margin: 40px auto 60px;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #0a3d62;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-      resize: vertical;
-    }
-    textarea {
-      min-height: 120px;
-    }
-    button {
-      background-color: #0a3d62;
-      color: white;
-      padding: 15px 0;
-      width: 100%;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1em;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(10, 61, 98, 0.4);
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    button:hover {
-      background-color: #063353;
-      transform: scale(1.05);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hava Jahaj | Get In Touch</title>
+    <link rel="stylesheet" href="assets/wp-theme.css">
+    <style>
+        /* Modern WordPress Gutenberg Style Enhancements */
+        .modern-wp-header {
+            background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+            color: white;
+            padding: 60px 40px;
+            margin: -40px -40px 40px -40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Navigation styles */
-    nav {
-      background: #0a3d62;
-      font-weight: 600;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-      border-radius: 8px;
-      max-width: 600px;
-      margin: 30px auto 0;
-      padding: 0;
-    }
-    nav ul.nav-list {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 10px 20px;
-      margin: 0;
-      justify-content: center;
-    }
-    nav ul.nav-list li a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      display: block;
-      transition: background-color 0.3s ease;
-      border-radius: 4px;
-    }
-    nav ul.nav-list li a:hover,
-    nav ul.nav-list li a.active {
-      background-color: #063353;
-    }
+        .modern-wp-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
 
-    /* Hamburger menu styles */
-    .nav-toggle {
-      display: none;
-      cursor: pointer;
-      padding: 10px 20px;
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      z-index: 1001;
-    }
-    .nav-toggle div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      transition: 0.4s;
-    }
+        .modern-wp-header h1 {
+            font-size: 3em;
+            margin: 0 0 15px 0;
+            font-weight: 300;
+            position: relative;
+        }
 
-    /* Responsive nav for small screens */
-    @media (max-width: 768px) {
-      nav ul.nav-list {
-        display: none;
-        flex-direction: column;
-        background: #0a3d62;
-        width: 100%;
-        position: absolute;
-        top: 48px;
-        left: 0;
-        border-radius: 0 0 8px 8px;
-        z-index: 1000;
-      }
-      nav ul.nav-list.show {
-        display: flex;
-      }
-      .nav-toggle {
-        display: block;
-      }
-    }
-  </style>
+        .modern-wp-header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+        }
+
+        /* Modern Card Styles */
+        .modern-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e1e5e9;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .modern-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .modern-card h3 {
+            color: #1d2327;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2271b1;
+            font-weight: 600;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e1e5e9;
+            transition: all 0.3s ease;
+            border-left: 4px solid #2271b1;
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(34, 113, 177, 0.15);
+        }
+
+        .contact-card h4 {
+            color: #1d2327;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-card p {
+            color: #50575e;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            color: #2271b1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #135e96;
+            text-decoration: underline;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1d2327;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #2271b1;
+            box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 113, 177, 0.4);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-link {
+            background: #f8f9fa;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #50575e;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-link:hover {
+            background: #2271b1;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Fixed WordPress Navigation */
+        .wp-admin-bar {
+            background: linear-gradient(135deg, #1d2327 0%, #2c3338 100%);
+            color: white;
+            padding: 0 20px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            border-bottom: 1px solid #3c434a;
+        }
+
+        .wp-admin-bar .ab-left,
+        .wp-admin-bar .ab-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .wp-admin-bar .ab-item {
+            color: white;
+            text-decoration: none;
+            padding: 0 12px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            transition: background-color 0.2s ease;
+        }
+
+        .wp-admin-bar .ab-item:hover {
+            background: #2271b1;
+        }
+
+        .wp-sidebar {
+            position: fixed;
+            left: 0;
+            top: 32px;
+            width: 160px;
+            height: calc(100vh - 32px);
+            background: linear-gradient(180deg, #1d2327 0%, #2c3338 100%);
+            color: white;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: width 0.3s ease;
+            border-right: 1px solid #3c434a;
+        }
+
+        .wp-sidebar.mobile-open {
+            display: block !important;
+        }
+
+        .wp-sidebar-menu {
+            list-style: none;
+        }
+
+        .wp-sidebar-menu li {
+            margin-bottom: 2px;
+        }
+
+        .wp-sidebar-menu a {
+            color: #c3c4c7;
+            text-decoration: none;
+            padding: 12px 15px;
+            display: block;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border-radius: 0;
+            border-left: 3px solid transparent;
+        }
+
+        .wp-sidebar-menu a:hover {
+            color: white;
+            background: #2c3338;
+            border-left-color: #2271b1;
+        }
+
+        .wp-sidebar-menu a.active {
+            color: white;
+            background: #2271b1;
+            border-left-color: #135e96;
+        }
+
+        .wp-sidebar-menu .menu-icon {
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .wp-content {
+            margin-left: 160px;
+            margin-top: 32px;
+            padding: 40px;
+            min-height: calc(100vh - 32px);
+            transition: margin-left 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modern-wp-header {
+                padding: 40px 20px;
+                margin: -20px -20px 20px -20px;
+            }
+
+            .modern-wp-header h1 {
+                font-size: 2em;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wp-sidebar {
+                width: 60px;
+            }
+            
+            .wp-sidebar-menu span:not(.menu-icon) {
+                display: none;
+            }
+            
+            .wp-content {
+                margin-left: 60px;
+                padding: 20px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wp-sidebar {
+                display: none;
+                width: 200px;
+            }
+            
+            .wp-sidebar.mobile-open {
+                display: block;
+            }
+            
+            .wp-sidebar-menu span:not(.menu-icon) {
+                display: inline;
+            }
+            
+            .wp-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Contact Hava</h1>
-
-    <form action="mailto:hava22@gmail.com" method="post" enctype="text/plain">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Send</button>
-    </form>
-  </div>
-
-  <nav>
-    <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
-      <div></div>
-      <div></div>
-      <div></div>
+    <!-- WordPress Admin Bar -->
+    <div class="wp-admin-bar">
+        <div class="ab-left">
+            <a href="index.html" class="ab-item">Hava's Portfolio</a>
+        </div>
+        <div class="ab-right">
+            <a href="mailto:hava22@gmail.com" class="ab-item">hava22@gmail.com</a>
+            <a href="contact.html" class="ab-item">Contact</a>
+        </div>
     </div>
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tutoring.html">Tutoring</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-  </nav>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector('.nav-toggle');
-      const navList = document.querySelector('.nav-list');
-      if (toggle && navList) {
-        toggle.addEventListener('click', () => {
-          navList.classList.toggle('show');
+    <!-- WordPress Sidebar -->
+    <nav class="wp-sidebar">
+        <ul class="wp-sidebar-menu">
+            <li><a href="index.html"><span class="menu-icon">🏠</span> <span>Dashboard</span></a></li>
+            <li><a href="about.html"><span class="menu-icon">👤</span> <span>About Me</span></a></li>
+            <li><a href="technology.html"><span class="menu-icon">💻</span> <span>Technology</span></a></li>
+            <li><a href="open-source.html"><span class="menu-icon">🔓</span> <span>Open Source</span></a></li>
+            <li><a href="digital-ethics.html"><span class="menu-icon">⚖️</span> <span>Digital Ethics</span></a></li>
+            <li><a href="tutoring.html"><span class="menu-icon">🎓</span> <span>Tutoring</span></a></li>
+            <li><a href="graphic_design.html"><span class="menu-icon">🎨</span> <span>Graphic Design</span></a></li>
+            <li><a href="contact.html" class="active"><span class="menu-icon">📧</span> <span>Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="wp-content">
+        <!-- Modern Header -->
+        <div class="modern-wp-header">
+            <h1>Contact Me</h1>
+            <div class="subtitle">Let's Work Together on Your Next Project</div>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="modern-card">
+            <h3>📞 Get In Touch</h3>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>📧 Email</h4>
+                    <p>For project inquiries, collaborations, or general questions</p>
+                    <a href="mailto:hava22@gmail.com" class="contact-link">hava22@gmail.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <h4>💼 Professional</h4>
+                    <p>LinkedIn for professional networking and career opportunities</p>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">View LinkedIn Profile</a>
+                </div>
+
+                <div class="contact-card">
+                    <h4>💻 GitHub</h4>
+                    <p>Check out my open-source projects and code contributions</p>
+                    <a href="https://github.com/Hava22" target="_blank" class="contact-link">github.com/Hava22</a>
+                </div>
+
+                <div class="contact-card">
+                    <h4>🌐 Wikimedia</h4>
+                    <p>My contributions to Wikipedia and open knowledge</p>
+                    <a href="https://www.wikidata.org/wiki/Special:Contributions/Jahaj_Hava" target="_blank" class="contact-link">View Wikidata Contributions</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="modern-card">
+            <h3>✉️ Send a Message</h3>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this regarding?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or inquiry..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <span>📤</span> Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="modern-card" style="text-align: center; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <h3>🚀 Quick Connect</h3>
+            <p style="font-size: 1.1em; margin-bottom: 25px; color: #50575e;">
+                Prefer to connect through other platforms? Here are my main social and professional profiles:
+            </p>
+            <div class="social-links">
+                <a href="mailto:hava22@gmail.com" class="social-link">
+                    <span>📧</span> Email
+                </a>
+                <a href="https://github.com/Hava22" target="_blank" class="social-link">
+                    <span>💻</span> GitHub
+                </a>
+                <a href="https://www.wikidata.org/wiki/Special:Contributions/Jahaj_Hava" target="_blank" class="social-link">
+                    <span>🌐</span> Wikidata
+                </a>
+                <a href="https://era21.pythonanywhere.com" target="_blank" class="social-link">
+                    <span>✍️</span> Blog
+                </a>
+            </div>
+        </div>
+
+        <!-- Response Time -->
+        <div class="modern-card">
+            <h3>⏰ Response Time</h3>
+            <p>I typically respond to all inquiries within <strong>24-48 hours</strong>. For urgent matters, please include "URGENT" in your subject line.</p>
+            <p>I'm available for:</p>
+            <ul style="color: #50575e; line-height: 1.6;">
+                <li>• WordPress development projects</li>
+                <li>• Content creation and writing collaborations</li>
+                <li>• Open-source contributions</li>
+                <li>• Tutoring and educational partnerships</li>
+                <li>• Graphic design projects</li>
+                <li>• Digital ethics consultations</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileToggle = document.createElement('div');
+            mobileToggle.className = 'mobile-menu-toggle';
+            mobileToggle.innerHTML = '☰';
+            mobileToggle.style.cssText = `
+                position: fixed;
+                top: 8px;
+                left: 10px;
+                z-index: 10000;
+                background: var(--wp-primary);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+                display: none;
+                font-size: 16px;
+                line-height: 1;
+            `;
+            document.body.appendChild(mobileToggle);
+
+            mobileToggle.addEventListener('click', function() {
+                document.querySelector('.wp-sidebar').classList.toggle('mobile-open');
+            });
+
+            // Check screen size for mobile
+            function checkScreenSize() {
+                if (window.innerWidth <= 480) {
+                    mobileToggle.style.display = 'block';
+                } else {
+                    mobileToggle.style.display = 'none';
+                    document.querySelector('.wp-sidebar').classList.remove('mobile-open');
+                }
+            }
+
+            checkScreenSize();
+            window.addEventListener('resize', checkScreenSize);
+
+            // Form submission handling
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // Add your form submission logic here
+                    // For now, we'll just prevent default and show a message
+                    e.preventDefault();
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
         });
-        toggle.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            navList.classList.toggle('show');
-          }
-        });
-      }
-    });
-  </script>
+    </script>
 </body>
 </html>
-
