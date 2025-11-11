@@ -1,185 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Hava</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f7f7;
-      color: #222;
-      margin: 0;
-      padding: 0 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #0a3d62;
-      margin-top: 40px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto 60px;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      text-align: center;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    .author-photo {
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(10, 61, 98, 0.3);
-      margin: 20px auto;
-      display: block;
-    }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.5em;
-      margin: 20px 0;
-    }
-
-    /* Navigation styles */
-    nav {
-      background: #0a3d62;
-      font-weight: 600;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-      border-radius: 8px;
-      max-width: 900px;
-      margin: 20px auto 40px;
-      padding: 0;
-    }
-
-    nav ul.nav-list {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 10px 20px;
-      margin: 0;
-      justify-content: center;
-    }
-
-    nav ul.nav-list li a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      display: block;
-      transition: background-color 0.3s ease;
-    }
-
-    nav ul.nav-list li a:hover,
-    nav ul.nav-list li a.active {
-      background-color: #145a78;
-      border-radius: 4px;
-    }
-
-    /* Hamburger menu for small screens */
-    .nav-toggle {
-      display: none;
-      cursor: pointer;
-      padding: 15px 20px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 1001;
-    }
-
-    .nav-toggle div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      transition: 0.4s;
-    }
-
-    @media (max-width: 768px) {
-      nav ul.nav-list {
-        display: none;
-        flex-direction: column;
-        background: #0a3d62;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-      }
-
-      nav ul.nav-list.show {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Hava's Portfolio</title>
+    <link rel="stylesheet" href="assets/wp-theme.css">
 </head>
 <body>
-
-  <header>
-    <nav>
-      <div class="nav-toggle" aria-label="toggle navigation" role="button" tabindex="0">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="open-source.html">Open-Source</a></li>
-        <li><a href="digital-ethics.html">Digital Ethics</a></li>
-        <li><a href="tutoring.html">Tutoring</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <div class="container">
-      <h1>About Me</h1>
-     
-      <p>I’m Hava Jahaj, a technologist and digital activist working at the intersection of open knowledge, ethics, and technology. My work spans software development, digital media, and community outreach—especially through Wikimedia projects and open-source contributions.</p>
-      <p>With a background in computer science and cybersecurity, I strive to make digital environments safer, more ethical, and more accessible. My projects often integrate code, critical design, and social values to empower communities and amplify marginalized voices.</p>
-      <p>🔗 <a href="https://www.wikidata.org/wiki/Q123456" target="_blank" rel="noopener noreferrer">My Wikidata Profile</a></p>
-      <p>🔗 <a href="https://era21.pythonanywhere.com" target="_blank" rel="noopener noreferrer">Personal Blog</a></p>
-      <p>🔗 <a href="https://github.com/Hava22" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <!-- WordPress Admin Bar -->
+    <div class="wp-admin-bar">
+        <div class="ab-left">
+            <a href="index.html" class="ab-item">Hava's Portfolio Dashboard</a>
+        </div>
+        <div class="ab-right">
+            <a href="mailto:hava22@gmail.com" class="ab-item">hava22@gmail.com</a>
+            <a href="contact.html" class="ab-item">Contact</a>
+        </div>
     </div>
-  </main>
 
-  <script>
-    // Nav toggle for mobile
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector('.nav-toggle');
-      const navList = document.querySelector('.nav-list');
-      if (toggle && navList) {
-        toggle.addEventListener('click', () => {
-          navList.classList.toggle('show');
+    <!-- WordPress Sidebar -->
+    <nav class="wp-sidebar">
+        <ul class="wp-sidebar-menu">
+            <li><a href="index.html"><span class="menu-icon">🏠</span> <span>Dashboard</span></a></li>
+            <li><a href="about.html" class="active"><span class="menu-icon">👤</span> <span>About Me</span></a></li>
+            <li><a href="technology.html"><span class="menu-icon">💻</span> <span>Technology</span></a></li>
+            <li><a href="open-source.html"><span class="menu-icon">🔓</span> <span>Open Source</span></a></li>
+            <li><a href="digital-ethics.html"><span class="menu-icon">⚖️</span> <span>Digital Ethics</span></a></li>
+            <li><a href="tutoring.html"><span class="menu-icon">🎓</span> <span>Tutoring</span></a></li>
+            <li><a href="graphic_design.html"><span class="menu-icon">🎨</span> <span>Graphic Design</span></a></li>
+            <li><a href="contact.html"><span class="menu-icon">📧</span> <span>Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="wp-content">
+        <!-- Welcome Panel -->
+        <div class="welcome-panel">
+            <h2>About Me</h2>
+            <p>Learn more about my background, skills, and professional journey as a technologist and digital activist.</p>
+        </div>
+
+        <!-- Main Content Sections -->
+        <div class="dashboard-widgets">
+            <!-- Left Column -->
+            <div class="dashboard-column">
+                <!-- Professional Background -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Professional Background</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <p>I'm Hava Jahaj, a technologist and digital activist working at the intersection of open knowledge, ethics, and technology. My work spans software development, digital media, and community outreach—especially through Wikimedia projects and open-source contributions.</p>
+                        
+                        <div style="margin: 20px 0;">
+                            <h4 style="color: var(--wp-primary); margin-bottom: 10px;">My Mission</h4>
+                            <p>With a background in computer science and cybersecurity, I strive to make digital environments safer, more ethical, and more accessible. My projects often integrate code, critical design, and social values to empower communities and amplify marginalized voices.</p>
+                        </div>
+
+                        <div style="margin: 20px 0;">
+                            <h4 style="color: var(--wp-primary); margin-bottom: 10px;">Philosophy</h4>
+                            <p>I believe in creating digital experiences that are not only technically sound but also ethically grounded and socially responsible. Every project is an opportunity to build a better, more inclusive digital world.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Quick Links</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <a href="https://www.wikidata.org/wiki/Q123456" target="_blank" class="wp-button wp-button-secondary" style="text-align: left;">
+                                <span style="margin-right: 8px;">🔗</span> My Wikidata Profile
+                            </a>
+                            <a href="https://era21.pythonanywhere.com" target="_blank" class="wp-button wp-button-secondary" style="text-align: left;">
+                                <span style="margin-right: 8px;">🔗</span> Personal Blog
+                            </a>
+                            <a href="https://github.com/Hava22" target="_blank" class="wp-button wp-button-secondary" style="text-align: left;">
+                                <span style="margin-right: 8px;">🔗</span> GitHub Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="dashboard-column">
+                <!-- Quick Facts -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Quick Facts</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <div style="text-align: center; padding: 15px 0;">
+                            <div style="font-size: 1.5em; font-weight: bold; color: var(--wp-primary);">5+</div>
+                            <div style="color: var(--wp-text-light);">Years Experience</div>
+                        </div>
+                        <div style="text-align: center; padding: 15px 0;">
+                            <div style="font-size: 1.5em; font-weight: bold; color: var(--wp-success);">50+</div>
+                            <div style="color: var(--wp-text-light);">Projects Completed</div>
+                        </div>
+                        <div style="text-align: center; padding: 15px 0;">
+                            <div style="font-size: 1.5em; font-weight: bold; color: var(--wp-warning);">100+</div>
+                            <div style="color: var(--wp-text-light);">Wiki Contributions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Values -->
+                <div class="postbox">
+                    <div class="postbox-header">
+                        <h3 class="postbox-title">Core Values</h3>
+                    </div>
+                    <div class="postbox-content">
+                        <div class="design-grid">
+                            <div class="design-item">
+                                <h4>Open Knowledge</h4>
+                                <p>Advocating for free and accessible information for all</p>
+                            </div>
+                            <div class="design-item">
+                                <h4>Digital Ethics</h4>
+                                <p>Ensuring technology serves humanity responsibly</p>
+                            </div>
+                            <div class="design-item">
+                                <h4>Community</h4>
+                                <p>Building and supporting collaborative digital spaces</p>
+                            </div>
+                            <div class="design-item">
+                                <h4>Innovation</h4>
+                                <p>Creating solutions that address real-world challenges</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills & Expertise -->
+        <div class="metabox-holder">
+            <div class="postbox">
+                <div class="postbox-header">
+                    <h3 class="postbox-title">Technical Expertise</h3>
+                </div>
+                <div class="postbox-content">
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>WordPress Development</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>Python & Django</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>HTML5/CSS3</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>JavaScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="postbox">
+                <div class="postbox-header">
+                    <h3 class="postbox-title">Content & Community Skills</h3>
+                </div>
+                <div class="postbox-content">
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>Content Writing</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>Wikimedia Editing</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>Digital Ethics</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-label">
+                            <span>Community Management</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 82%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Focus Areas -->
+        <div class="content-section">
+            <h3>Professional Focus Areas</h3>
+            <div class="design-grid">
+                <div class="design-item">
+                    <h4>Open Source Development</h4>
+                    <p>Contributing to and maintaining open-source projects that benefit the wider community, with a focus on accessibility and documentation.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Wikimedia Projects</h4>
+                    <p>Active participation in Wikipedia and related projects, working to expand knowledge representation and digital accessibility.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Digital Security</h4>
+                    <p>Implementing security best practices and educating communities about digital safety and privacy protection.</p>
+                </div>
+                <div class="design-item">
+                    <h4>Technical Education</h4>
+                    <p>Mentoring and tutoring in programming, web development, and digital literacy skills.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.createElement('div');
+            mobileToggle.className = 'mobile-menu-toggle';
+            mobileToggle.innerHTML = '☰';
+            mobileToggle.style.cssText = `
+                position: fixed;
+                top: 8px;
+                left: 10px;
+                z-index: 10000;
+                background: var(--wp-primary);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+                display: none;
+                font-size: 16px;
+                line-height: 1;
+            `;
+            document.body.appendChild(mobileToggle);
+
+            mobileToggle.addEventListener('click', function() {
+                document.querySelector('.wp-sidebar').classList.toggle('mobile-open');
+            });
+
+            // Check screen size for mobile
+            function checkScreenSize() {
+                if (window.innerWidth <= 480) {
+                    mobileToggle.style.display = 'block';
+                    document.querySelector('.wp-sidebar').classList.add('mobile-open');
+                } else {
+                    mobileToggle.style.display = 'none';
+                    document.querySelector('.wp-sidebar').classList.remove('mobile-open');
+                }
+            }
+
+            checkScreenSize();
+            window.addEventListener('resize', checkScreenSize);
+
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'about.html';
+            const navLinks = document.querySelectorAll('.wp-sidebar-menu a');
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Progress bar animations
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
         });
-
-        toggle.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            navList.classList.toggle('show');
-          }
-        });
-      }
-    });
-  </script>
-
+    </script>
 </body>
 </html>
