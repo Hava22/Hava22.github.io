@@ -122,6 +122,41 @@
             font-weight: 500;
         }
 
+        /* Image Gallery Styles */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-figure {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-figure:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-figure img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-figure figcaption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #1d2327;
+        }
+
         /* Skills Grid */
         .skills-grid {
             display: grid;
@@ -342,7 +377,8 @@
                 font-size: 2em;
             }
 
-            .project-grid {
+            .project-grid,
+            .image-gallery {
                 grid-template-columns: 1fr;
             }
 
@@ -428,6 +464,29 @@
         <div class="modern-card">
             <h3>Showcasing My Graphic Design Skills</h3>
             <p>Explore my best works including social media visuals, infographics, branding projects, and digital campaigns I've created for online audiences. Each project combines aesthetic appeal with strategic communication to deliver compelling visual experiences.</p>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="modern-card">
+            <h3>🖼️ Design Gallery</h3>
+            <div class="image-gallery">
+                <figure class="gallery-figure" onclick="openModal('project1')">
+                    <img src="assets/images/graphic_design/project1.png" alt="Social Media Campaign">
+                    <figcaption>Social Media Campaign</figcaption>
+                </figure>
+                <figure class="gallery-figure" onclick="openModal('project2')">
+                    <img src="assets/images/graphic_design/project2.png" alt="Infographic Design">
+                    <figcaption>Infographic Design</figcaption>
+                </figure>
+                <figure class="gallery-figure" onclick="openModal('project3')">
+                    <img src="assets/images/graphic_design/project3.png" alt="Logo & Branding">
+                    <figcaption>Logo & Branding</figcaption>
+                </figure>
+                <figure class="gallery-figure" onclick="openModal('project4')">
+                    <img src="assets/images/graphic_design/project4.png" alt="Event Poster">
+                    <figcaption>Event Poster</figcaption>
+                </figure>
+            </div>
         </div>
 
         <!-- Featured Projects -->
@@ -523,7 +582,7 @@
     <div id="project1" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('project1')">&times;</span>
-            <img src="assets/images/graphic_design/project1.png" alt="Social Media Campaign" onerror="this.style.display='none'">
+            <img src="assets/images/graphic_design/project1.png" alt="Social Media Campaign">
             <h4>📱 Social Media Campaign</h4>
             <p>Created graphics for online awareness campaign with engaging visuals and call-to-action. Tools used: Canva, Photoshop. Focused on creating shareable content that drives engagement and brand recognition across social platforms.</p>
         </div>
@@ -532,7 +591,7 @@
     <div id="project2" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('project2')">&times;</span>
-            <img src="assets/images/graphic_design/project2.png" alt="Infographic Design" onerror="this.style.display='none'">
+            <img src="assets/images/graphic_design/project2.png" alt="Infographic Design">
             <h4>📊 Infographic Design</h4>
             <p>Visualized complex data into simple, eye-catching infographics for Wikimedia project. Tools used: Illustrator, Canva. Transformed statistical information into accessible visual narratives that educate and inform diverse audiences.</p>
         </div>
@@ -541,7 +600,7 @@
     <div id="project3" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('project3')">&times;</span>
-            <img src="assets/images/graphic_design/project3.png" alt="Logo & Branding" onerror="this.style.display='none'">
+            <img src="assets/images/graphic_design/project3.png" alt="Logo & Branding">
             <h4>🏢 Logo & Branding</h4>
             <p>Developed logo and branding elements for a fictional company to showcase design versatility. Tools used: Illustrator, Photoshop. Created cohesive visual identity systems that communicate brand personality and values effectively.</p>
         </div>
@@ -550,7 +609,7 @@
     <div id="project4" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('project4')">&times;</span>
-            <img src="assets/images/graphic_design/project4.png" alt="Event Poster" onerror="this.style.display='none'">
+            <img src="assets/images/graphic_design/project4.png" alt="Event Poster">
             <h4>📢 Event Poster</h4>
             <p>Designed promotional poster for an online event with clear layout and vibrant colors. Tools used: Photoshop, Canva. Balanced essential information with compelling visuals to attract attention and communicate event details effectively.</p>
         </div>
