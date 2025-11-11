@@ -1,165 +1,629 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphic Design Portfolio | Hava Jahaj</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  * { box-sizing: border-box; margin:0; padding:0; }
-  body { font-family: 'Roboto', sans-serif; background-color: #f4f4f4; color: #333; }
-  a { text-decoration: none; color: inherit; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design - Hava Jahaj | Creative Designer</title>
+    <link rel="stylesheet" href="assets/wp-theme.css">
+    <style>
+        /* Modern WordPress Gutenberg Style Enhancements */
+        .modern-wp-header {
+            background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+            color: white;
+            padding: 60px 40px;
+            margin: -40px -40px 40px -40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-  /* Header */
-  header { background-color: #222; color: white; padding: 40px 20px; text-align: center; }
-  header h1 { font-size: 2.5em; margin-bottom: 10px; }
-  header p { font-size: 1.2em; color: #bbb; }
+        .modern-wp-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
 
-  /* Navigation */
-  nav { background-color: #333; }
-  nav ul { display: flex; justify-content: center; list-style: none; }
-  nav ul li { margin: 0 15px; }
-  nav ul li a { color: white; padding: 15px 0; display: block; font-weight: bold; }
-  nav ul li a:hover { color: #f4c242; }
+        .modern-wp-header h1 {
+            font-size: 3em;
+            margin: 0 0 15px 0;
+            font-weight: 300;
+            position: relative;
+        }
 
-  /* Hero */
-  .hero { text-align: center; padding: 60px 20px; background: #eee; }
-  .hero h2 { font-size: 2em; margin-bottom: 20px; }
-  .hero p { font-size: 1.1em; max-width: 700px; margin: 0 auto; }
+        .modern-wp-header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+        }
 
-  /* Gallery */
-  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; padding: 40px 20px; }
-  .gallery figure { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s; }
-  .gallery figure:hover { transform: scale(1.05); }
-  .gallery img { width: 100%; display: block; }
-  .gallery figcaption { padding: 15px; text-align: center; font-weight: bold; }
+        /* Modern Card Styles */
+        .modern-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e1e5e9;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-  /* Modal */
-  .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
-  .modal-content { background: #fff; margin: 10% auto; padding: 20px; border-radius: 8px; width: 80%; max-width: 700px; position: relative; text-align: center; }
-  .modal-content img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
-  .close { position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; color: #333; cursor: pointer; }
+        .modern-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
 
-  /* Skills */
-  .skills { background: #fff; padding: 40px 20px; text-align: center; }
-  .skills h2 { margin-bottom: 20px; }
-  .skills p { max-width: 600px; margin: 0 auto 10px auto; }
+        .modern-card h3 {
+            color: #1d2327;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2271b1;
+            font-weight: 600;
+        }
 
-  /* Contact */
-  .contact { background: #eee; padding: 40px 20px; text-align: center; }
-  .contact a { color: #333; font-weight: bold; }
-  .contact a:hover { color: #f4c242; }
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
 
-  /* Footer */
-  footer { background-color: #222; color: white; text-align: center; padding: 20px; margin-top: 20px; }
+        .project-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e1e5e9;
+            transition: all 0.3s ease;
+            border-left: 4px solid #2271b1;
+            cursor: pointer;
+        }
 
-  @media(max-width: 600px){ nav ul { flex-direction: column; } }
-</style>
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(34, 113, 177, 0.15);
+        }
+
+        .project-card h4 {
+            color: #1d2327;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-card p {
+            color: #50575e;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #2271b1;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #2271b1;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(34, 113, 177, 0.15);
+        }
+
+        .skill-item h4 {
+            color: #1d2327;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        /* Contact Links */
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-link {
+            background: #f8f9fa;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #50575e;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-link:hover {
+            background: #2271b1;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e1e5e9;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #50575e;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #2271b1;
+        }
+
+        /* Fixed WordPress Navigation */
+        .wp-admin-bar {
+            background: linear-gradient(135deg, #1d2327 0%, #2c3338 100%);
+            color: white;
+            padding: 0 20px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            border-bottom: 1px solid #3c434a;
+        }
+
+        .wp-admin-bar .ab-left,
+        .wp-admin-bar .ab-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .wp-admin-bar .ab-item {
+            color: white;
+            text-decoration: none;
+            padding: 0 12px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            transition: background-color 0.2s ease;
+        }
+
+        .wp-admin-bar .ab-item:hover {
+            background: #2271b1;
+        }
+
+        .wp-sidebar {
+            position: fixed;
+            left: 0;
+            top: 32px;
+            width: 160px;
+            height: calc(100vh - 32px);
+            background: linear-gradient(180deg, #1d2327 0%, #2c3338 100%);
+            color: white;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: width 0.3s ease;
+            border-right: 1px solid #3c434a;
+        }
+
+        .wp-sidebar.mobile-open {
+            display: block !important;
+        }
+
+        .wp-sidebar-menu {
+            list-style: none;
+        }
+
+        .wp-sidebar-menu li {
+            margin-bottom: 2px;
+        }
+
+        .wp-sidebar-menu a {
+            color: #c3c4c7;
+            text-decoration: none;
+            padding: 12px 15px;
+            display: block;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border-radius: 0;
+            border-left: 3px solid transparent;
+        }
+
+        .wp-sidebar-menu a:hover {
+            color: white;
+            background: #2c3338;
+            border-left-color: #2271b1;
+        }
+
+        .wp-sidebar-menu a.active {
+            color: white;
+            background: #2271b1;
+            border-left-color: #135e96;
+        }
+
+        .wp-sidebar-menu .menu-icon {
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .wp-content {
+            margin-left: 160px;
+            margin-top: 32px;
+            padding: 40px;
+            min-height: calc(100vh - 32px);
+            transition: margin-left 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modern-wp-header {
+                padding: 40px 20px;
+                margin: -20px -20px 20px -20px;
+            }
+
+            .modern-wp-header h1 {
+                font-size: 2em;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wp-sidebar {
+                width: 60px;
+            }
+            
+            .wp-sidebar-menu span:not(.menu-icon) {
+                display: none;
+            }
+            
+            .wp-content {
+                margin-left: 60px;
+                padding: 20px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wp-sidebar {
+                display: none;
+                width: 200px;
+            }
+            
+            .wp-sidebar.mobile-open {
+                display: block;
+            }
+            
+            .wp-sidebar-menu span:not(.menu-icon) {
+                display: inline;
+            }
+            
+            .wp-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- WordPress Admin Bar -->
+    <div class="wp-admin-bar">
+        <div class="ab-left">
+            <a href="index.html" class="ab-item">Hava's Portfolio</a>
+        </div>
+        <div class="ab-right">
+            <a href="mailto:hava22@gmail.com" class="ab-item">hava22@gmail.com</a>
+            <a href="contact.html" class="ab-item">Contact</a>
+        </div>
+    </div>
 
-<header>
-  <h1>Hava Jahaj</h1>
-  <p>Graphic Designer | Digital Media | Creative Portfolio</p>
-</header>
+    <!-- WordPress Sidebar -->
+    <nav class="wp-sidebar">
+        <ul class="wp-sidebar-menu">
+            <li><a href="index.html"><span class="menu-icon">🏠</span> <span>Dashboard</span></a></li>
+            <li><a href="about.html"><span class="menu-icon">👤</span> <span>About Me</span></a></li>
+            <li><a href="technology.html"><span class="menu-icon">💻</span> <span>Technology</span></a></li>
+            <li><a href="open-source.html"><span class="menu-icon">🔓</span> <span>Open Source</span></a></li>
+            <li><a href="digital-ethics.html"><span class="menu-icon">⚖️</span> <span>Digital Ethics</span></a></li>
+            <li><a href="tutoring.html"><span class="menu-icon">🎓</span> <span>Tutoring</span></a></li>
+            <li><a href="graphic_design.html" class="active"><span class="menu-icon">🎨</span> <span>Graphic Design</span></a></li>
+            <li><a href="contact.html"><span class="menu-icon">📧</span> <span>Contact</span></a></li>
+        </ul>
+    </nav>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="graphic_design.html">Graphic Design</a></li>
-    <li><a href="work05.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <!-- Main Content Area -->
+    <main class="wp-content">
+        <!-- Modern Header -->
+        <div class="modern-wp-header">
+            <h1>Graphic Design Portfolio</h1>
+            <div class="subtitle">Creative Visual Solutions & Digital Media</div>
+        </div>
 
-<section class="hero">
-  <h2>Showcasing My Graphic Design Skills</h2>
-  <p>Explore my best works including social media visuals, infographics, branding projects, and digital campaigns I’ve created for online audiences.</p>
-</section>
+        <!-- Introduction -->
+        <div class="modern-card">
+            <h3>Showcasing My Graphic Design Skills</h3>
+            <p>Explore my best works including social media visuals, infographics, branding projects, and digital campaigns I've created for online audiences. Each project combines aesthetic appeal with strategic communication to deliver compelling visual experiences.</p>
+        </div>
 
-<section class="gallery">
-  <figure onclick="openModal('project1')">
-    <img src="assets/images/graphic_design/project1.png" alt="Project 1">
-    <figcaption>Social Media Campaign</figcaption>
-  </figure>
-  <figure onclick="openModal('project2')">
-    <img src="assets/images/graphic_design/project2.png" alt="Project 2">
-    <figcaption>Infographic Design</figcaption>
-  </figure>
-  <figure onclick="openModal('project3')">
-    <img src="assets/images/graphic_design/project3.png" alt="Project 3">
-    <figcaption>Logo & Branding</figcaption>
-  </figure>
-  <figure onclick="openModal('project4')">
-    <img src="assets/images/graphic_design/project4.png" alt="Project 4">
-    <figcaption>Event Poster</figcaption>
-  </figure>
-</section>
+        <!-- Featured Projects -->
+        <div class="modern-card">
+            <h3>🎨 Featured Projects</h3>
+            <div class="project-grid">
+                <div class="project-card" onclick="openModal('project1')">
+                    <h4>📱 Social Media Campaign</h4>
+                    <p>Created engaging social media graphics to boost online awareness using Canva and Photoshop. Designed visuals with clear calls-to-action and brand consistency.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Canva</span>
+                        <span class="tech-tag">Photoshop</span>
+                        <span class="tech-tag">Social Media</span>
+                    </div>
+                </div>
 
-<!-- Modals -->
-<div id="project1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('project1')">&times;</span>
-    <img src="assets/images/graphic_design/project1.png" alt="Project 1">
-    <p>Social Media Campaign – Tools used: Canva, Photoshop. Description: Created graphics for online awareness campaign with engaging visuals and call-to-action.</p>
-  </div>
-</div>
+                <div class="project-card" onclick="openModal('project2')">
+                    <h4>📊 Infographic Design</h4>
+                    <p>Visualized complex data into simple, eye-catching infographics using Illustrator and Canva. Made information accessible and engaging for diverse audiences.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Illustrator</span>
+                        <span class="tech-tag">Canva</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                </div>
 
-<div id="project2" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('project2')">&times;</span>
-    <img src="assets/images/graphic_design/project2.png" alt="Project 2">
-    <p>Infographic Design – Tools used: Illustrator, Canva. Description: Visualized complex data into simple, eye-catching infographics for Wikimedia project.</p>
-  </div>
-</div>
+                <div class="project-card" onclick="openModal('project3')">
+                    <h4>🏢 Logo & Branding</h4>
+                    <p>Developed logos and branding elements for projects, demonstrating creativity and design versatility. Created cohesive visual identities that communicate brand values.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Illustrator</span>
+                        <span class="tech-tag">Photoshop</span>
+                        <span class="tech-tag">Branding</span>
+                    </div>
+                </div>
 
-<div id="project3" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('project3')">&times;</span>
-    <img src="assets/images/graphic_design/project3.png" alt="Project 3">
-    <p>Logo & Branding – Tools used: Illustrator, Photoshop. Description: Developed logo and branding elements for a fictional company to showcase design versatility.</p>
-  </div>
-</div>
+                <div class="project-card" onclick="openModal('project4')">
+                    <h4>📢 Event Poster</h4>
+                    <p>Designed promotional posters for events with clean layouts and vibrant visuals using Photoshop and Canva. Balanced information hierarchy with visual appeal.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Photoshop</span>
+                        <span class="tech-tag">Canva</span>
+                        <span class="tech-tag">Print Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div id="project4" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('project4')">&times;</span>
-    <img src="assets/images/graphic_design/project4.png" alt="Project 4">
-    <p>Event Poster – Tools used: Photoshop, Canva. Description: Designed promotional poster for an online event with clear layout and vibrant colors.</p>
-  </div>
-</div>
+        <!-- Skills & Tools -->
+        <div class="modern-card">
+            <h3>🛠️ Skills & Tools</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>Adobe Creative Suite</h4>
+                    <p>Photoshop, Illustrator, InDesign</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Design Platforms</h4>
+                    <p>Canva, Figma, Adobe Express</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Design Specialties</h4>
+                    <p>Visual Storytelling, Branding, Infographics</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Digital Media</h4>
+                    <p>Social Media Design, Web Graphics, Digital Campaigns</p>
+                </div>
+            </div>
+        </div>
 
-<section class="skills">
-  <h2>Skills & Tools</h2>
-  <p>Adobe Photoshop, Illustrator, Canva, Figma, InDesign</p>
-  <p>Visual Storytelling, Branding, Infographics, Social Media Design</p>
-</section>
+        <!-- Contact Section -->
+        <div class="modern-card" style="text-align: center; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <h3>📧 Get In Touch</h3>
+            <p style="font-size: 1.1em; margin-bottom: 25px; color: #50575e;">
+                Interested in collaborating on a design project or need creative visual solutions?
+            </p>
+            <div class="contact-links">
+                <a href="mailto:hava22@gmail.com" class="contact-link">
+                    <span>📧</span> hava22@gmail.com
+                </a>
+                <a href="https://t.me/Hava" target="_blank" class="contact-link">
+                    <span>📱</span> Telegram: @Hava
+                </a>
+                <a href="contact.html" class="contact-link">
+                    <span>💬</span> Contact Form
+                </a>
+            </div>
+        </div>
+    </main>
 
-<section class="contact">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:youremail@example.com">hava.jahaj22@gmail.com</a></p>
-  <p>Telegram: <a href="https://t.me/yourusername" target="_blank">t.me/Hava</a></p>
-</section>
+    <!-- Modals -->
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project1')">&times;</span>
+            <img src="assets/images/graphic_design/project1.png" alt="Social Media Campaign" onerror="this.style.display='none'">
+            <h4>📱 Social Media Campaign</h4>
+            <p>Created graphics for online awareness campaign with engaging visuals and call-to-action. Tools used: Canva, Photoshop. Focused on creating shareable content that drives engagement and brand recognition across social platforms.</p>
+        </div>
+    </div>
 
-<footer>
-  <p>© 2025 Hava Jahaj | All Rights Reserved</p>
-</footer>
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project2')">&times;</span>
+            <img src="assets/images/graphic_design/project2.png" alt="Infographic Design" onerror="this.style.display='none'">
+            <h4>📊 Infographic Design</h4>
+            <p>Visualized complex data into simple, eye-catching infographics for Wikimedia project. Tools used: Illustrator, Canva. Transformed statistical information into accessible visual narratives that educate and inform diverse audiences.</p>
+        </div>
+    </div>
 
-<script>
-  function openModal(id) {
-    document.getElementById(id).style.display = "block";
-  }
-  function closeModal(id) {
-    document.getElementById(id).style.display = "none";
-  }
-  // Close modal when clicking outside content
-  window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-      if(event.target == modal) modal.style.display = "none";
-    });
-  }
-</script>
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project3')">&times;</span>
+            <img src="assets/images/graphic_design/project3.png" alt="Logo & Branding" onerror="this.style.display='none'">
+            <h4>🏢 Logo & Branding</h4>
+            <p>Developed logo and branding elements for a fictional company to showcase design versatility. Tools used: Illustrator, Photoshop. Created cohesive visual identity systems that communicate brand personality and values effectively.</p>
+        </div>
+    </div>
 
+    <div id="project4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project4')">&times;</span>
+            <img src="assets/images/graphic_design/project4.png" alt="Event Poster" onerror="this.style.display='none'">
+            <h4>📢 Event Poster</h4>
+            <p>Designed promotional poster for an online event with clear layout and vibrant colors. Tools used: Photoshop, Canva. Balanced essential information with compelling visuals to attract attention and communicate event details effectively.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileToggle = document.createElement('div');
+            mobileToggle.className = 'mobile-menu-toggle';
+            mobileToggle.innerHTML = '☰';
+            mobileToggle.style.cssText = `
+                position: fixed;
+                top: 8px;
+                left: 10px;
+                z-index: 10000;
+                background: var(--wp-primary);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+                display: none;
+                font-size: 16px;
+                line-height: 1;
+            `;
+            document.body.appendChild(mobileToggle);
+
+            mobileToggle.addEventListener('click', function() {
+                document.querySelector('.wp-sidebar').classList.toggle('mobile-open');
+            });
+
+            // Check screen size for mobile
+            function checkScreenSize() {
+                if (window.innerWidth <= 480) {
+                    mobileToggle.style.display = 'block';
+                } else {
+                    mobileToggle.style.display = 'none';
+                    document.querySelector('.wp-sidebar').classList.remove('mobile-open');
+                }
+            }
+
+            checkScreenSize();
+            window.addEventListener('resize', checkScreenSize);
+        });
+
+        // Modal functions
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.style.display = "none";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
