@@ -265,6 +265,141 @@
             transform: translateY(-2px);
         }
 
+        /* Wikidata Highlight Section */
+        .wikidata-highlight {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #2271b1;
+            margin: 20px 0;
+        }
+
+        .wikidata-stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .wikidata-stat {
+            padding: 15px;
+        }
+
+        .wikidata-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2271b1;
+            display: block;
+        }
+
+        .wikidata-label {
+            color: #50575e;
+            font-size: 0.9em;
+        }
+
+        /* Fixed WordPress Navigation */
+        .wp-admin-bar {
+            background: linear-gradient(135deg, #1d2327 0%, #2c3338 100%);
+            color: white;
+            padding: 0 20px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            border-bottom: 1px solid #3c434a;
+        }
+
+        .wp-admin-bar .ab-left,
+        .wp-admin-bar .ab-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .wp-admin-bar .ab-item {
+            color: white;
+            text-decoration: none;
+            padding: 0 12px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            transition: background-color 0.2s ease;
+        }
+
+        .wp-admin-bar .ab-item:hover {
+            background: #2271b1;
+        }
+
+        .wp-sidebar {
+            position: fixed;
+            left: 0;
+            top: 32px;
+            width: 160px;
+            height: calc(100vh - 32px);
+            background: linear-gradient(180deg, #1d2327 0%, #2c3338 100%);
+            color: white;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: width 0.3s ease;
+            border-right: 1px solid #3c434a;
+        }
+
+        .wp-sidebar.mobile-open {
+            display: block !important;
+        }
+
+        .wp-sidebar-menu {
+            list-style: none;
+        }
+
+        .wp-sidebar-menu li {
+            margin-bottom: 2px;
+        }
+
+        .wp-sidebar-menu a {
+            color: #c3c4c7;
+            text-decoration: none;
+            padding: 12px 15px;
+            display: block;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border-radius: 0;
+            border-left: 3px solid transparent;
+        }
+
+        .wp-sidebar-menu a:hover {
+            color: white;
+            background: #2c3338;
+            border-left-color: #2271b1;
+        }
+
+        .wp-sidebar-menu a.active {
+            color: white;
+            background: #2271b1;
+            border-left-color: #135e96;
+        }
+
+        .wp-sidebar-menu .menu-icon {
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .wp-content {
+            margin-left: 160px;
+            margin-top: 32px;
+            padding: 40px;
+            min-height: calc(100vh - 32px);
+            transition: margin-left 0.3s ease;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .modern-wp-header {
@@ -288,6 +423,44 @@
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .wp-sidebar {
+                width: 60px;
+            }
+            
+            .wp-sidebar-menu span:not(.menu-icon) {
+                display: none;
+            }
+            
+            .wp-content {
+                margin-left: 60px;
+                padding: 20px;
+            }
+
+            .wikidata-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wp-sidebar {
+                display: none;
+                width: 200px;
+            }
+            
+            .wp-sidebar.mobile-open {
+                display: block;
+            }
+            
+            .wp-sidebar-menu span:not(.menu-icon) {
+                display: inline;
+            }
+            
+            .wp-content {
+                margin-left: 0;
+                padding: 15px;
             }
         }
     </style>
@@ -337,14 +510,14 @@
                     Passionate about creating digital environments that are safer, more ethical, and accessible to all.
                 </div>
                 <div class="social-links">
-                    <a href="https://www.wikidata.org/wiki/Q123456" target="_blank" class="social-link">
-                        <span>📚</span> Wikidata
+                    <a href="https://www.wikidata.org/wiki/Special:Contributions/Jahaj_Hava" target="_blank" class="social-link">
+                        <span>📚</span> Wikidata Contributions
                     </a>
                     <a href="https://era21.pythonanywhere.com" target="_blank" class="social-link">
-                        <span>✍️</span> Blog
+                        <span>✍️</span> Personal Blog
                     </a>
                     <a href="https://github.com/Hava22" target="_blank" class="social-link">
-                        <span>💻</span> GitHub
+                        <span>💻</span> GitHub Profile
                     </a>
                 </div>
             </div>
@@ -361,12 +534,39 @@
                 <span class="stat-label">Projects</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">100+</span>
+                <span class="stat-number">1,167</span>
                 <span class="stat-label">Wiki Edits</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number">98%</span>
                 <span class="stat-label">Satisfaction</span>
+            </div>
+        </div>
+
+        <!-- Wikidata Contributions Highlight -->
+        <div class="wikidata-highlight">
+            <h3 style="color: #2271b1; margin-bottom: 20px; text-align: center;">📚 Active Wikidata Contributor</h3>
+            <div class="wikidata-stats">
+                <div class="wikidata-stat">
+                    <span class="wikidata-number">1,167</span>
+                    <span class="wikidata-label">Total Edits</span>
+                </div>
+                <div class="wikidata-stat">
+                    <span class="wikidata-number">May 2025</span>
+                    <span class="wikidata-label">Account Created</span>
+                </div>
+                <div class="wikidata-stat">
+                    <span class="wikidata-number">Active</span>
+                    <span class="wikidata-label">Contributor Status</span>
+                </div>
+            </div>
+            <p style="text-align: center; color: #50575e; margin-bottom: 20px;">
+                Active contributor to Wikidata, working to expand and improve structured data for the open knowledge ecosystem.
+            </p>
+            <div style="text-align: center;">
+                <a href="https://www.wikidata.org/wiki/Special:Contributions/Jahaj_Hava" target="_blank" class="modern-button">
+                    <span>🔍</span> View My Wikidata Contributions
+                </a>
             </div>
         </div>
 
