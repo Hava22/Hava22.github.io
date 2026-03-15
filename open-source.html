@@ -1,5 +1,3 @@
-I have updated the page as you requested. The first statistic now reads "A user with 2,977 edits. Account created on 6 May 2025," and the "Mirënjohje Vlerësimi" certificate image has been placed directly under the "Wikimedia Contributions" project card.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -320,7 +318,62 @@ I have updated the page as you requested. The first statistic now reads "A user 
             transition: margin-left 0.3s ease;
         }
 
-        /* Certificate image styling */
+        /* PDF Showcase Styling */
+        .pdf-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+            align-items: start;
+        }
+
+        .pdf-viewer {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid #e1e5e9;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .pdf-viewer h4 {
+            color: #1d2327;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #e1e5e9;
+            padding-bottom: 10px;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .pdf-download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #2271b1;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-download-link:hover {
+            background: #135e96;
+            transform: translateY(-2px);
+        }
+
+        /* Certificate image styling (keeping original) */
         .certificate-container {
             margin-top: 30px;
             text-align: center;
@@ -383,6 +436,10 @@ I have updated the page as you requested. The first statistic now reads "A user 
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pdf-showcase {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -496,7 +553,7 @@ I have updated the page as you requested. The first statistic now reads "A user 
         <div class="modern-card">
             <h3>Featured Open Source Projects</h3>
             <div class="project-grid">
-                <!-- Wikimedia card - certificate image placed directly under this card -->
+                <!-- Wikimedia card -->
                 <div class="project-card" id="wikimedia-card">
                     <h4>📚 Wikimedia Contributions</h4>
                     <p>Active contributor to Wikipedia and Wikidata with 2,977+ edits, working to expand open knowledge and improve content quality across multiple language editions. Account created on 6 May 2025.</p>
@@ -528,31 +585,50 @@ I have updated the page as you requested. The first statistic now reads "A user 
                 </div>
             </div>
 
-            <!-- Certificate image placed directly under Wikimedia Contributions (inside the same card section, after the grid) -->
-            <div class="certificate-container">
-                <!-- The PDF content has been converted to an image representation (since we can't embed PDF directly, using a styled div that looks like a certificate, but also showing the original text) -->
-                <div style="background: #fff3e0; border-radius: 16px; overflow: hidden; border: 1px solid #d4b68a;">
-                    <div style="background: linear-gradient(145deg, #f7e6d4, #fdf5e6); padding: 30px 20px; text-align: center; border-bottom: 3px double #b5946b;">
-                        <div style="font-size: 2.5rem; margin-bottom: 10px;">🏅</div>
-                        <div style="font-family: 'Georgia', serif; color: #5a3e2b;">
-                            <h2 style="font-size: 2rem; letter-spacing: 2px; margin-bottom: 10px; color: #8b5a2b;">MIRËNJOHJE VLERËSIMI</h2>
-                            <div style="font-size: 1.2rem; margin: 20px 0;">KJO MIRËNJOHJE I NDAHET ME KRENARI</div>
-                            <div style="font-size: 2.5rem; font-weight: bold; margin: 20px 0; color: #2271b1; text-shadow: 2px 2px 0 #f0e0c0;">Hava Jahaj</div>
-                            <div style="font-size: 1.1rem; max-width: 500px; margin: 20px auto; line-height: 1.6;">
-                                Për kontributin e dhënë në redaktim të Wikipedia / Wikidata / Wikimedia Commons 
-                                gjatë aktiviteteve të organizuar nga Grupi i Përdoruesve Wikimedian-ët e Gjuhës Shqipe.
-                            </div>
-                            <div style="display: flex; justify-content: space-between; max-width: 400px; margin: 30px auto 0; font-size: 1rem;">
-                                <span>DATA 24.01.2026</span>
-                                <span>NËNSHKRIMI _________________</span>
+            <!-- PDF Showcase - Placed next to Wikimedia Contributions -->
+            <div class="pdf-showcase">
+                <!-- Original certificate representation (left side) -->
+                <div class="certificate-container" style="margin-top: 0;">
+                    <div style="background: #fff3e0; border-radius: 16px; overflow: hidden; border: 1px solid #d4b68a;">
+                        <div style="background: linear-gradient(145deg, #f7e6d4, #fdf5e6); padding: 30px 20px; text-align: center; border-bottom: 3px double #b5946b;">
+                            <div style="font-size: 2.5rem; margin-bottom: 10px;">🏅</div>
+                            <div style="font-family: 'Georgia', serif; color: #5a3e2b;">
+                                <h2 style="font-size: 2rem; letter-spacing: 2px; margin-bottom: 10px; color: #8b5a2b;">MIRËNJOHJE VLERËSIMI</h2>
+                                <div style="font-size: 1.2rem; margin: 20px 0;">KJO MIRËNJOHJE I NDAHET ME KRENARI</div>
+                                <div style="font-size: 2.5rem; font-weight: bold; margin: 20px 0; color: #2271b1; text-shadow: 2px 2px 0 #f0e0c0;">Hava Jahaj</div>
+                                <div style="font-size: 1.1rem; max-width: 500px; margin: 20px auto; line-height: 1.6;">
+                                    Për kontributin e dhënë në redaktim të Wikipedia / Wikidata / Wikimedia Commons 
+                                    gjatë aktiviteteve të organizuar nga Grupi i Përdoruesve Wikimedian-ët e Gjuhës Shqipe.
+                                </div>
+                                <div style="display: flex; justify-content: space-between; max-width: 400px; margin: 30px auto 0; font-size: 1rem;">
+                                    <span>DATA 24.01.2026</span>
+                                    <span>NËNSHKRIMI _________________</span>
+                                </div>
                             </div>
                         </div>
+                        <div style="background: #b5946b; color: white; padding: 8px; text-align: center; font-size: 0.9rem;">
+                            ⬩ Official Recognition · Grupi i Përdoruesve Wikimedian-ët e Gjuhës Shqipe ⬩
+                        </div>
                     </div>
-                    <div style="background: #b5946b; color: white; padding: 8px; text-align: center; font-size: 0.9rem;">
-                        ⬩ Official Recognition · Grupi i Përdoruesve Wikimedian-ët e Gjuhës Shqipe ⬩
-                    </div>
+                    <div class="certificate-caption">📜 Mirënjohje Vlerësimi – 24 January 2026</div>
                 </div>
-                <div class="certificate-caption">📜 Mirënjohje Vlerësimi – 24 January 2026</div>
+
+                <!-- PDF Viewer (right side) -->
+                <div class="pdf-viewer">
+                    <h4>📄 Original Certificate PDF</h4>
+                    <!-- PDF embedding - you'll need to copy the PDF to your website directory -->
+                    <iframe src="Mirënjohje për Hava Jahaj.pdf" class="pdf-container" title="Mirënjohje Certificate"></iframe>
+                    
+                    <!-- Download link -->
+                    <a href="Mirënjohje për Hava Jahaj.pdf" download class="pdf-download-link">
+                        <span>📥</span> Download PDF Certificate
+                    </a>
+                    
+                    <!-- Note about copying the PDF -->
+                    <p style="margin-top: 10px; font-size: 0.9em; color: #666; font-style: italic;">
+                        ⚠️ Note: Please copy the PDF file to your website directory for this to work.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -649,4 +725,3 @@ I have updated the page as you requested. The first statistic now reads "A user 
     </script>
 </body>
 </html>
-```
