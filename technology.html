@@ -42,6 +42,93 @@
             position: relative;
         }
 
+        /* Language Toggle for Certificate */
+        .language-toggle {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            border: 1px solid #e1e5e9;
+        }
+
+        .language-toggle .lang-label {
+            font-weight: 600;
+            color: #1d2327;
+            font-size: 0.9em;
+        }
+
+        .language-toggle .lang-badge {
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid #e1e5e9;
+            background: #f8f9fa;
+            color: #50575e;
+            transition: all 0.3s ease;
+        }
+
+        .language-toggle .lang-badge:hover {
+            border-color: #2271b1;
+        }
+
+        .language-toggle .lang-badge.active {
+            background: #2271b1;
+            color: white;
+            border-color: #2271b1;
+        }
+
+        .language-toggle .lang-badge.sq {
+            background: #d4a843;
+            color: white;
+            border-color: #d4a843;
+        }
+
+        .language-toggle .lang-badge.sq.active {
+            background: #b8922f;
+            border-color: #b8922f;
+        }
+
+        .language-toggle .lang-badge.en {
+            background: #2271b1;
+            color: white;
+            border-color: #2271b1;
+        }
+
+        .language-toggle .lang-badge.en.active {
+            background: #135e96;
+            border-color: #135e96;
+        }
+
+        /* Bilingual Content for Certificate Only */
+        .certificate-bilingual {
+            display: block;
+        }
+
+        .certificate-bilingual .sq-content {
+            display: block;
+        }
+
+        .certificate-bilingual .en-content {
+            display: block;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #e1e5e9;
+        }
+
+        .certificate-bilingual .en-content .label-en {
+            color: #2271b1;
+            font-weight: 600;
+            font-size: 0.85em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
         /* Technology Grid */
         .tech-grid {
             display: grid;
@@ -518,6 +605,10 @@
             .certificate-image-wrapper .pdf-viewer {
                 height: 400px;
             }
+
+            .language-toggle {
+                flex-wrap: wrap;
+            }
         }
 
         @media (max-width: 480px) {
@@ -616,6 +707,13 @@
                 <h2 class="certificate-title">Tatimet, Buxhetimi dhe Menaxhimi i Shpenzimeve</h2>
             </div>
 
+            <!-- Language Toggle for Certificate Only -->
+            <div class="language-toggle">
+                <span class="lang-label">📖 Language:</span>
+                <span class="lang-badge sq active" onclick="toggleLanguage('sq')">🇦🇱 Shqip</span>
+                <span class="lang-badge en" onclick="toggleLanguage('en')">🇬🇧 English</span>
+            </div>
+
             <!-- Certificate Image Display - PDF embedded directly -->
             <div class="certificate-image-wrapper">
                 <!-- PDF embedded directly -->
@@ -650,10 +748,20 @@
 
             <div class="certificate-description">
                 <strong>📋 Program Description:</strong>
-                <p style="margin-top: 8px; margin-bottom: 0;">
-                    Ky trajnim është realizuar me qëllim të fuqizimit të njohurive dhe aftësive në menaxhimin e tatimeve, 
-                    planifikimin e buxhetit, kontrollin e shpenzimeve dhe përmbushjen e detyrimeve financiare të bizneseve.
-                </p>
+                
+                <div class="certificate-bilingual">
+                    <div class="sq-content">
+                        <p style="margin-top: 8px; margin-bottom: 0;">
+                            Ky trajnim është realizuar me qëllim të fuqizimit të njohurive dhe aftësive në menaxhimin e tatimeve, planifikimin e buxhetit, kontrollin e shpenzimeve dhe përmbushjen e detyrimeve financiare të bizneseve.
+                        </p>
+                    </div>
+                    <div class="en-content">
+                        <span class="label-en">🌍 English Version</span>
+                        <p style="margin-top: 8px; margin-bottom: 0;">
+                            This training was conducted with the aim of empowering knowledge and skills in tax management, budget planning, expense control, and fulfilling business financial obligations.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div class="certificate-organizations">
@@ -824,7 +932,50 @@
 
             checkScreenSize();
             window.addEventListener('resize', checkScreenSize);
+
+            // Set default language to Albanian (Shqip) for certificate only
+            document.querySelectorAll('.certificate-bilingual').forEach(container => {
+                const sqContent = container.querySelector('.sq-content');
+                const enContent = container.querySelector('.en-content');
+                
+                if (sqContent && enContent) {
+                    sqContent.style.display = 'block';
+                    enContent.style.display = 'none';
+                }
+            });
         });
+
+        // Language Toggle Function for Certificate Only
+        function toggleLanguage(lang) {
+            // Update active state of badges
+            document.querySelectorAll('.lang-badge').forEach(badge => {
+                badge.classList.remove('active');
+            });
+            
+            if (lang === 'sq') {
+                document.querySelector('.lang-badge.sq').classList.add('active');
+                document.querySelector('.lang-badge.en').classList.remove('active');
+            } else {
+                document.querySelector('.lang-badge.en').classList.add('active');
+                document.querySelector('.lang-badge.sq').classList.remove('active');
+            }
+            
+            // Toggle visibility of certificate content only
+            document.querySelectorAll('.certificate-bilingual').forEach(container => {
+                const sqContent = container.querySelector('.sq-content');
+                const enContent = container.querySelector('.en-content');
+                
+                if (sqContent && enContent) {
+                    if (lang === 'sq') {
+                        sqContent.style.display = 'block';
+                        enContent.style.display = 'none';
+                    } else {
+                        sqContent.style.display = 'none';
+                        enContent.style.display = 'block';
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
