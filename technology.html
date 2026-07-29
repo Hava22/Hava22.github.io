@@ -133,6 +133,149 @@
             font-weight: 600;
         }
 
+        /* Certificate Card */
+        .certificate-card {
+            background: linear-gradient(135deg, #fdf6e3 0%, #fef9f0 100%);
+            border: 2px solid #d4a843;
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(212, 168, 67, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-card::before {
+            content: '🏅';
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 120px;
+            opacity: 0.08;
+            transform: rotate(15deg);
+        }
+
+        .certificate-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .certificate-badge {
+            background: linear-gradient(135deg, #d4a843, #b8922f);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .certificate-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #1d2327;
+            margin: 0;
+        }
+
+        .certificate-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+        }
+
+        .certificate-detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certificate-detail-item .label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c7781;
+            font-weight: 600;
+        }
+
+        .certificate-detail-item .value {
+            font-size: 1em;
+            font-weight: 500;
+            color: #1d2327;
+            margin-top: 3px;
+        }
+
+        .certificate-description {
+            color: #50575e;
+            line-height: 1.7;
+            margin: 15px 0;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #d4a843;
+        }
+
+        .certificate-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e8e0d0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .certificate-issuer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .certificate-issuer .issuer-name {
+            font-weight: 600;
+            color: #1d2327;
+        }
+
+        .certificate-issuer .issuer-title {
+            font-size: 0.85em;
+            color: #6c7781;
+        }
+
+        .certificate-date {
+            color: #6c7781;
+            font-size: 0.9em;
+        }
+
+        .certificate-date strong {
+            color: #1d2327;
+        }
+
+        .certificate-organizations {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .certificate-organizations .org-item {
+            font-size: 0.9em;
+            color: #50575e;
+        }
+
+        .certificate-organizations .org-item strong {
+            color: #1d2327;
+        }
+
         /* Resource Links */
         .resource-links {
             display: flex;
@@ -323,6 +466,10 @@
             .resource-links {
                 flex-direction: column;
             }
+
+            .certificate-details {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -342,6 +489,11 @@
             .wp-content {
                 margin-left: 0;
                 padding: 15px;
+            }
+
+            .certificate-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -401,6 +553,59 @@
                 <div class="philosophy-item">
                     <h4>Open Knowledge</h4>
                     <p>Advocating for accessible information and collaborative development practices.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificate Showcase -->
+        <div class="certificate-card">
+            <div class="certificate-header">
+                <span class="certificate-badge">🎓 Certificate of Completion</span>
+                <h2 class="certificate-title">Tatimet, Buxhetimi dhe Menaxhimi i Shpenzimeve</h2>
+            </div>
+
+            <div class="certificate-details">
+                <div class="certificate-detail-item">
+                    <span class="label">Participant</span>
+                    <span class="value">Hava Jahaj</span>
+                </div>
+                <div class="certificate-detail-item">
+                    <span class="label">Program</span>
+                    <span class="value">Edukimi Financiar Digjital për Gratë Ndërmarrëse</span>
+                </div>
+                <div class="certificate-detail-item">
+                    <span class="label">Date</span>
+                    <span class="value">28 Korrik 2026</span>
+                </div>
+                <div class="certificate-detail-item">
+                    <span class="label">Location</span>
+                    <span class="value">Online / Google Meet</span>
+                </div>
+            </div>
+
+            <div class="certificate-description">
+                <strong>📋 Program Description:</strong>
+                <p style="margin-top: 8px; margin-bottom: 0;">
+                    Ky trajnim është realizuar me qëllim të fuqizimit të njohurive dhe aftësive në menaxhimin e tatimeve, 
+                    planifikimin e buxhetit, kontrollin e shpenzimeve dhe përmbushjen e detyrimeve financiare të bizneseve.
+                </p>
+            </div>
+
+            <div class="certificate-organizations">
+                <span class="org-item"><strong>Supported by:</strong> CIVICUS</span>
+                <span class="org-item"><strong>Implemented by:</strong> OJQ Yellow</span>
+            </div>
+
+            <div class="certificate-footer">
+                <div class="certificate-issuer">
+                    <span style="font-size: 2em;">✍️</span>
+                    <div>
+                        <div class="issuer-name">Fatlum Gogici</div>
+                        <div class="issuer-title">Drejtor Ekzekutiv, OJQ YELLOW</div>
+                    </div>
+                </div>
+                <div class="certificate-date">
+                    <strong>Issued:</strong> 28 Korrik 2026
                 </div>
             </div>
         </div>
