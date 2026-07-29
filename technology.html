@@ -181,6 +181,30 @@
             margin: 0;
         }
 
+        /* Certificate Image */
+        .certificate-image-wrapper {
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background: white;
+            padding: 10px;
+        }
+
+        .certificate-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .certificate-image-wrapper .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
+
         .certificate-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -219,6 +243,12 @@
             background: white;
             border-radius: 8px;
             border-left: 4px solid #d4a843;
+        }
+
+        .certificate-description .sq {
+            margin-top: 8px;
+            color: #2271b1;
+            font-weight: 500;
         }
 
         .certificate-footer {
@@ -470,6 +500,10 @@
             .certificate-details {
                 grid-template-columns: 1fr;
             }
+
+            .certificate-image-wrapper .pdf-viewer {
+                height: 400px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -494,6 +528,10 @@
             .certificate-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .certificate-image-wrapper .pdf-viewer {
+                height: 300px;
             }
         }
     </style>
@@ -564,6 +602,18 @@
                 <h2 class="certificate-title">Tatimet, Buxhetimi dhe Menaxhimi i Shpenzimeve</h2>
             </div>
 
+            <!-- Certificate Image Display -->
+            <div class="certificate-image-wrapper">
+                <!-- Option 1: Display as Image (if you converted PDF to PNG) -->
+                <img src="certificate.png" alt="Certificate of Completion - Taxes, Budgeting and Expense Management" />
+                
+                <!-- Option 2: Display PDF directly (uncomment below and comment above) -->
+                <!-- <embed src="Certifikata - Hava Jahaj.pdf" type="application/pdf" class="pdf-viewer" /> -->
+                
+                <!-- Option 3: If you have the image as JPG -->
+                <!-- <img src="certificate.jpg" alt="Certificate of Completion - Taxes, Budgeting and Expense Management" /> -->
+            </div>
+
             <div class="certificate-details">
                 <div class="certificate-detail-item">
                     <span class="label">Participant</span>
@@ -586,8 +636,10 @@
             <div class="certificate-description">
                 <strong>📋 Program Description:</strong>
                 <p style="margin-top: 8px; margin-bottom: 0;">
-                    Ky trajnim është realizuar me qëllim të fuqizimit të njohurive dhe aftësive në menaxhimin e tatimeve, 
-                    planifikimin e buxhetit, kontrollin e shpenzimeve dhe përmbushjen e detyrimeve financiare të bizneseve.
+                    <strong>Albanian:</strong> Ky trajnim është realizuar me qëllim të fuqizimit të njohurive dhe aftësive në menaxhimin e tatimeve, planifikimin e buxhetit, kontrollin e shpenzimeve dhe përmbushjen e detyrimeve financiare të bizneseve.
+                </p>
+                <p class="sq">
+                    <strong>English:</strong> This training was conducted with the aim of empowering knowledge and skills in tax management, budget planning, expense control, and fulfilling business financial obligations.
                 </p>
             </div>
 
