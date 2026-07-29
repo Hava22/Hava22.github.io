@@ -268,8 +268,8 @@
             margin: 0;
         }
 
-        /* Certificate Image */
-        .certificate-image-wrapper {
+        /* Certificate PDF Viewer */
+        .certificate-pdf-wrapper {
             margin: 20px 0;
             border-radius: 12px;
             overflow: hidden;
@@ -278,14 +278,7 @@
             padding: 10px;
         }
 
-        .certificate-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .certificate-image-wrapper .pdf-viewer {
+        .certificate-pdf-wrapper .pdf-viewer {
             width: 100%;
             height: 600px;
             border: none;
@@ -602,7 +595,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .certificate-image-wrapper .pdf-viewer {
+            .certificate-pdf-wrapper .pdf-viewer {
                 height: 400px;
             }
 
@@ -635,7 +628,7 @@
                 align-items: flex-start;
             }
 
-            .certificate-image-wrapper .pdf-viewer {
+            .certificate-pdf-wrapper .pdf-viewer {
                 height: 300px;
             }
         }
@@ -714,17 +707,16 @@
                 <span class="lang-badge en" onclick="toggleLanguage('en')">🇬🇧 English</span>
             </div>
 
-            <!-- Certificate Image Display - PDF embedded directly -->
-            <div class="certificate-image-wrapper">
-                <!-- PDF embedded directly -->
+            <!-- PDF Viewer - Display PDF directly in browser -->
+            <div class="certificate-pdf-wrapper">
                 <embed src="Certifikata%20-%20Hava%20Jahaj.pdf" type="application/pdf" class="pdf-viewer" />
-                
-                <!-- Download button below PDF -->
-                <div style="text-align: center; margin-top: 15px;">
-                    <a href="Certifikata%20-%20Hava%20Jahaj.pdf" download class="pdf-download-btn">
-                        <span>⬇️</span> Download Certificate (PDF)
-                    </a>
-                </div>
+            </div>
+
+            <!-- Download button below PDF -->
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="Certifikata%20-%20Hava%20Jahaj.pdf" download class="pdf-download-btn">
+                    <span>⬇️</span> Download Certificate (PDF)
+                </a>
             </div>
 
             <div class="certificate-details">
