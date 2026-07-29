@@ -205,6 +205,79 @@
             border-radius: 8px;
         }
 
+        /* Tech Impact Section */
+        .tech-impact {
+            background: linear-gradient(135deg, #e8f0fe 0%, #f0f7ff 100%);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 20px 0;
+            border-left: 5px solid #2271b1;
+        }
+
+        .tech-impact h4 {
+            color: #1d2327;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tech-impact ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .tech-impact ul li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #50575e;
+            line-height: 1.6;
+        }
+
+        .tech-impact ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 8px;
+            color: #2271b1;
+            font-weight: bold;
+        }
+
+        .tech-impact .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tech-impact .impact-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .tech-impact .impact-item .icon {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tech-impact .impact-item .label {
+            font-weight: 600;
+            color: #1d2327;
+            font-size: 0.9em;
+        }
+
+        .tech-impact .impact-item .desc {
+            font-size: 0.8em;
+            color: #6c7781;
+            margin-top: 3px;
+        }
+
         .certificate-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -504,6 +577,10 @@
             .certificate-image-wrapper .pdf-viewer {
                 height: 400px;
             }
+
+            .tech-impact .impact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -532,6 +609,10 @@
 
             .certificate-image-wrapper .pdf-viewer {
                 height: 300px;
+            }
+
+            .tech-impact .impact-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -602,16 +683,45 @@
                 <h2 class="certificate-title">Tatimet, Buxhetimi dhe Menaxhimi i Shpenzimeve</h2>
             </div>
 
-            <!-- Certificate Image Display -->
+            <!-- Tech Impact Section - Connecting Certificate to Technology -->
+            <div class="tech-impact">
+                <h4>💡 The Impact of Technology in Financial Education</h4>
+                <p style="color: #50575e; margin-bottom: 12px;">
+                    <strong>Albanian:</strong> Teknologjia ka transformuar mënyrën se si ne mësojmë dhe menaxhojmë financat. Ky trajnim përdori platforma digjitale për të ofruar njohuri të aksesueshme dhe interaktive për gratë ndërmarrëse.
+                </p>
+                <p style="color: #50575e; margin-bottom: 12px;">
+                    <strong>English:</strong> Technology has transformed how we learn and manage finances. This training used digital platforms to deliver accessible and interactive knowledge for women entrepreneurs.
+                </p>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="icon">🌐</span>
+                        <div class="label">Digital Access</div>
+                        <div class="desc">Online learning platforms made education accessible anywhere</div>
+                    </div>
+                    <div class="impact-item">
+                        <span class="icon">📊</span>
+                        <div class="label">Data-Driven Insights</div>
+                        <div class="desc">Technology enables better financial tracking and analysis</div>
+                    </div>
+                    <div class="impact-item">
+                        <span class="icon">🤝</span>
+                        <div class="label">Collaborative Learning</div>
+                        <div class="desc">Digital tools fostered community and knowledge sharing</div>
+                    </div>
+                    <div class="impact-item">
+                        <span class="icon">🔐</span>
+                        <div class="label">Secure Transactions</div>
+                        <div class="desc">Understanding digital payment systems and financial security</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate Image Display - PDF embedded directly -->
             <div class="certificate-image-wrapper">
-                <!-- Option 1: Display as Image (if you converted PDF to PNG) -->
-                <img src="certificate.png" alt="Certificate of Completion - Taxes, Budgeting and Expense Management" />
+                <!-- PDF embedded directly -->
+                <embed src="Certifikata%20-%20Hava%20Jahaj.pdf" type="application/pdf" class="pdf-viewer" />
                 
-                <!-- Option 2: Display PDF directly (uncomment below and comment above) -->
-                <!-- <embed src="Certifikata - Hava Jahaj.pdf" type="application/pdf" class="pdf-viewer" /> -->
-                
-                <!-- Option 3: If you have the image as JPG -->
-                <!-- <img src="certificate.jpg" alt="Certificate of Completion - Taxes, Budgeting and Expense Management" /> -->
+                <!-- <img src="certificate.png" alt="Certificate of Completion - Taxes, Budgeting and Expense Management" /> -->
             </div>
 
             <div class="certificate-details">
